@@ -21,20 +21,22 @@ export const Tab: React.VFC<TabProps> = ({ label, color, index, onClick }) => {
 }
 
 const StyledTab = styled.div<TabStyleProps>`
-
+  height: 20vh;
+  width: 60px;
   position: absolute;
   top: 0;
   left: 100%;
+  padding: 8px;
 
   background: ${props => props.color};
-  height: 20vh;
-  width: 60px;
+  color: #fafafa;
+  
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   margin-top: ${props => props.index * 20}vh;
 
   writing-mode: vertical-rl;

@@ -1,2 +1,6 @@
 export { TabContainer } from './TabContainer'
-export { Home } from './Home'
+export { Tab } from './Tab'
+export * from './styled-components'
+export { IconLink } from './IconLink'
+export { Card } from './Card'
+export { Icon } from './Icon'

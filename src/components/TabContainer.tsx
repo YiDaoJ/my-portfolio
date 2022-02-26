@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useStore } from '../utils'
 import Tab from './Tab'
@@ -7,7 +7,6 @@ import Tab from './Tab'
 interface TabContainerStyleProps {
   color: string
   index: number
-
 }
 
 interface TabContainerProps extends TabContainerStyleProps {
@@ -44,7 +43,7 @@ const Container = styled.div<ContainerProps>`
 `
 
 const ContentContainer = styled.div<TabContainerStyleProps>`
-  width: ${props => `calc(${window.innerWidth - 80}px + ${props.index * 2}px)`};
+  width: ${props => `calc(100vw - 80px + ${props.index * 2}px)`};
   height: 100vh;
   box-shadow: 6px 2px 8px rgba(0,0,0,0.2);
   background: ${props => props.color};
