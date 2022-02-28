@@ -1,35 +1,46 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { MdOutlineClose } from 'react-icons/md'
+import clsx from 'clsx'
 
 
 interface CardProps {
   title: string
   imgURL: string
+  color: string
 }
 
-export const Card:React.VFC<CardProps> = ({title, imgURL}) => {
+export const Card:React.VFC<CardProps> = ({title, imgURL, color}) => {
 
   const [ openContent, setOpenContent ] = useState<boolean>(false)
+  const [ isClicked, setIsClicked] = useState<boolean>(false)
 
-  
+  const handleOpenModal = () => {
+    setIsClicked(true)
+      setOpenContent(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsClicked(false)
+    setOpenContent(false)
+  }
+   
 
   return (
     <>
-    <StyledCard onClick={() => setOpenContent(true)}>
-      <Border />
-      <img src={imgURL} alt={title} />
-      <h1>{title}</h1>
+    <StyledCard className={clsx({clicked: isClicked})} onClick={handleOpenModal} color={color}>
+      <Border className='border' />
+      <ImageContainer>
+        <img src={imgURL} alt={title} />
+      </ImageContainer>
+      <Title className='title'>{title}</Title>
     </StyledCard>
-    <Modal className='modal' isOpen={openContent}>
-      <CloseAction onClick={() =>setOpenContent(false)} className="close-content">
-          <MdOutlineClose  />
-      </CloseAction>
-      
-      <OpenContent className='open-content'>
-        {/* <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a> */}
 
-        
+    <Modal className={clsx(['modal', {'open': openContent}])} isOpen={openContent} color={color}>
+      <CloseAction onClick={handleCloseModal} className="close-content">
+        <MdOutlineClose  />
+      </CloseAction>
+      <OpenContent className='open-content'>
         <div className="text" id="open-content-text">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
 
@@ -40,37 +51,77 @@ export const Card:React.VFC<CardProps> = ({title, imgURL}) => {
         <div className='img-container'>
           <img  src={imgURL} alt={title} />
         </div>
-       
-        
       </OpenContent>
     </Modal>
     </>
   )
 }
 
-const StyledCard = styled.div`
-  /* width: 20rem; */
-  max-width: 340px;
+
+
+const StyledCard = styled.div<{color: string}>`
+  width: 340px;
+  height: 360px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
-  background: #EB5160;
+  background: ${props => props.color};
   color: #fff;
+  border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 200ms linear, transform 200ms ease-out 120ms;
 
-  h1 {
-    position: relative;
-    padding: 190px 0px 100px 10px;
-    width: 90%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
   }
 
-  > img {
-    width: 90%;
-    position: absolute;
-    top: -6%;
-    left: -6%;
+
+  &.clicked {
+    opacity: 0;
+    transform: translate3d(0px, -100px, 0px);
+
+    img {
+      opacity: 0;
+      transform: translate3d(0px, -40px, 0px);
+    }
+
+    .border {
+      opacity: 0;
+      transform: scale(1.3);
+    }
   }
+
+  &:hover {
+    .border{
+      transform: skew(8deg);
+    }
+  }
+`
+
+const ImageContainer = styled.div`
+  width: 90%;
+  height: 200px;
+  position: absolute;
+  top: -6%;
+  left: -6%;
+  transition: opacity 200ms linear 0ms, transform 200ms ease-in 0ms;
+  object-fit: contain;
+`
+
+const Title = styled.div`
+  transform: translate3d(20%, 0px, 0px);  
+  transition: opacity 200ms linear 120ms, transform 200ms ease-in 120ms;
+  font-size: 2rem;
+  margin-bottom: -10rem;
+  font-weight: 500;
+  line-height: 150%;
 `
 
 const Border = styled.div`
@@ -78,27 +129,41 @@ const Border = styled.div`
   width: 100%;
   height: 100%;
   padding: 6px;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   opacity: 0.5;
-  left: -6px;
-  top: -6px;
+  left: -10px;
+  top: -10px;
+  border-radius: 15px;
+
+  transition: opacity 200ms linear, transform 200ms ease-out;
 `
 
 interface ModalProps {
-  isOpen: boolean
+  isOpen: boolean,
+  color: string
 }
 
 const Modal = styled.div<ModalProps>`
   position: absolute;
-  background: #EB5160;
-  z-index: 1000;
-  transform-origin: 50% 50%;
   width: 100vw;
   height: 100vh;
+  top: 100vh;
   left: 0;
+  transition: all 300ms ease-in-out;
   visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
+  z-index: 1000;
+
+  &.open {
+    background: ${props => props.color};
+    z-index: 1000;
+    transform-origin: bottom;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    transition: all 300ms ease-in-out;
+  }
+
   
-  padding: 1.5rem;
 `
 
 const CloseAction = styled.div`
@@ -111,11 +176,6 @@ const CloseAction = styled.div`
   width: auto;
   height: auto;
   line-height: 0px;
-
-  /* &:hover{
-      transition: all 600ms cubic-bezier(.99,0,.57,.94);
-      transform: rotate(360deg);
-    } */
 
   svg {
     color: #fff;
@@ -134,41 +194,32 @@ const OpenContent = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 3rem;
+  transition: opacity 200ms linear 0ms;
 
   .text {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    width: 50%;
+    height: 100%;
+    color: #f0efeb;
+    font-size: 1rem;
+    line-height: 150%;
   }
 
   .img-container {
     perspective: 2000px;
+    width: 50%;
+    height: 100%;
 
     img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       transform: rotateY(-30deg) rotateX(5deg) translateX(-10%);;
     }
   }
-
-  
-  
-
-  /* img {
-    position: relative;
-    width: 50%;
-    margin-top: 8;
-    z-index: 5;
-    transform: rotateY(-30deg) rotateX(5deg) translateX(-50%);
-  }
-
-  .text {
-    position: absolute;
-    background: #fff;
-    margin-top: -25%;
-    padding: 40% 5% 5% 5%;
-    width: 80%;
-    height: calc(100% - 80px);
-    margin-left: 5%;
-    margin-bottom: 5%;
-    overflow: scroll;
-  } */
 `
 
 export default Card

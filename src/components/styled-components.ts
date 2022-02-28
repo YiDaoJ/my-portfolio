@@ -12,6 +12,7 @@ export const StyledH1 = styled.h1`
 export const StyledH2 = styled.h2`
   color: #f1f8e9;
   font-weight: 400;
+  line-height: 150%;
 `
 
 export const PageContainer = styled.div`

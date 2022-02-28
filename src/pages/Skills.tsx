@@ -35,6 +35,7 @@ const SkillPointsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
+  justify-content: center;
   gap: 1rem;
   padding: 2rem 0;
 

@@ -7,11 +7,10 @@ export const Contact: React.VFC = () => {
   return (
     <PageContainer>
       <StyledH1>
-        Contact Me!
+        Let's talk!
       </StyledH1>
 
       <StyledEmail>
-        {`Email:\n\n`}
         <a href="mailto:jiang.chuxiao@gmail.com" target="_blank" rel="noreferrer">jiang.chuxiao@gmail.com</a>
       </StyledEmail>
       
@@ -43,15 +42,17 @@ const ContactPanel = styled.div`
   width: 100%;
 `
 
-const StyledEmail = styled.p`
+const StyledEmail = styled.div`
   text-align: center;
-	font-size: 20px;
-	color: #D2FCF1;
+	font-size: 1.3rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  
 
   a:link {
     color: #F5DB3B;
-    font-weight: bold;
     text-decoration: none;
+    transition: all 300ms ease;
   }
 
   a:visited {
@@ -59,7 +60,7 @@ const StyledEmail = styled.p`
   }
 
   a:hover {
-    color: #325F55;
+    color: white;;
   }
 
 `
