@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Home, Contact, SkillPage, About, ProjectsPage } from './pages';
+import { Home, Contact, About, ProjectsPage } from './pages';
 import { AppTheme, GlobalStyles } from './styles';
-import { TabMenu } from './components';
+import { Layout } from './components';
 
 
 
@@ -15,15 +15,13 @@ function App() {
     <ThemeProvider theme={AppTheme}>
       <BrowserRouter>
         <Routes>
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/projects' element={<ProjectsPage />} />
-            <Route path='/skills' element={<SkillPage />} />
-            <Route path='/contact' element={<Contact />} />
-          </>
+          <Route path="/" element={<Layout />} >
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='projects' element={<ProjectsPage />} />
+            <Route path='contact' element={<Contact />} />
+          </Route>
         </Routes>
-        {/* <TabMenu /> */}
 
       </BrowserRouter>
       <GlobalStyles />

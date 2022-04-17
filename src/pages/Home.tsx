@@ -1,21 +1,24 @@
 import React from 'react'
-import { Layout, PageContainer, TabContainer } from '../components'
+import styled from 'styled-components'
 
 export const Home: React.VFC = () => {
   return (
-    <Layout>
-      <TabContainer color="#0277bd" index={0} label="Home">
-        <PageContainer>
-          <div>
-            Hi, I'm Xiao
-          </div>
-          <div>
-            Web Engineer, Front End Addict.
-          </div>
-        </PageContainer>
-      </TabContainer>
-    </Layout>
+
+      <HomeContainer>
+        homehomehomehome
+      </HomeContainer>
   )
 }
+
+const HomeContainer = styled.div`
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 180px);
+  background-color: #e3f2fd;
+  padding: 3rem;
+  opacity: 1;
+  /* position: absolute;
+  z-index: 1000; */
+`
 
 export default Home

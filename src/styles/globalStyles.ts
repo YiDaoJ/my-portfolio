@@ -20,7 +20,8 @@ export const GlobalStyles = createGlobalStyle`
     *,
     *::before,
     *::after {
-      box-sizing: inherit;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent!important;
     }
 
     #root {

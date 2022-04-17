@@ -9,6 +9,7 @@ class ApplicationStore {
   }
 
   public updateCurrentIndex(newIndex: number) {
+    console.log(this.currentIndex, newIndex)
     this.currentIndex = newIndex
   }
 
