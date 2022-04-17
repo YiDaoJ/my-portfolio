@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card } from '../components'
+import { Card, TabContainer } from '../components'
 
 
 
 export const ProjectsPage: React.VFC = () => {
   return (
+    <TabContainer color="#00695c" index={2} label="Projects" >
     <ProjectsContainer>
       <Card 
         title="Effizienz-Netzwerk der Stadtwerke" 
@@ -33,6 +34,7 @@ export const ProjectsPage: React.VFC = () => {
         color="#ffb600" 
       />
     </ProjectsContainer>
+    </TabContainer>
   )
 }
 

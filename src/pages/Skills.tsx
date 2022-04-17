@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { PageContainer, StyledH2 } from '../components'
+import { PageContainer, StyledH2, TabContainer } from '../components'
 import React from './Contact'
 
 export const SkillPage: React.VFC = () => {
   return (
+    <TabContainer color="#2e7d32" index={3} label="Skills" >
     <PageContainer>
       <StyledH2>
         I've started frontend development, since I was a student.<br />
@@ -25,6 +26,7 @@ export const SkillPage: React.VFC = () => {
         <div>kubernetes</div>
       </SkillPointsContainer>
     </PageContainer>
+    </TabContainer>
   )
 }
 

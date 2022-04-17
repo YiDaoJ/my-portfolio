@@ -1,10 +1,11 @@
 import { FaGithubAlt, FaCodepen, FaFacebookSquare, FaBloggerB } from "react-icons/fa";
 import React from 'react'
 import styled from 'styled-components'
-import { StyledH2, IconLink, PageContainer, StyledH1 } from "../components";
+import { StyledH2, IconLink, PageContainer, StyledH1, TabContainer } from "../components";
 
 export const Contact: React.VFC = () => {
   return (
+    <TabContainer color="#558b2f" index={4} label="Contact" >
     <PageContainer>
       <StyledH1>
         Let's talk!
@@ -30,6 +31,7 @@ export const Contact: React.VFC = () => {
 					</IconLink>
 				</ContactPanel>
     </PageContainer>
+    </TabContainer>
   )
 }
 

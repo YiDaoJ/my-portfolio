@@ -1,8 +1,7 @@
 import { observer } from 'mobx-react-lite'
-import React, { useCallback } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useStore } from '../utils'
-import Tab from './Tab'
 
 interface TabContainerStyleProps {
   color: string
@@ -18,16 +17,12 @@ export const TabContainer: React.FC<TabContainerProps> = observer(({ color, chil
   const store = useStore()
 
 
-  const handleOnSelect = useCallback((currentIndex: number) => {
-    store.updateCurrentIndex(currentIndex)
-  }, [store])
-
   return (
     <Container className={`tab-${index}`}  color={color} index={index} isSelected={store.currentIndex === index}>
       <ContentContainer color={color} className="tab-container" index={index}  >
         {children}
       </ContentContainer>
-      <Tab label={label} color={color} index={index} onClick={() => handleOnSelect(index)}/>
+      
     </Container>
   )
 })
@@ -43,8 +38,10 @@ const Container = styled.div<ContainerProps>`
 `
 
 const ContentContainer = styled.div<TabContainerStyleProps>`
-  width: ${props => `calc(100vw - 80px + ${props.index * 2}px)`};
-  height: 100vh;
+  /* width: ${props => `calc(100vw - 80px + ${props.index * 2}px)`}; */
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+  width: 100vw;
   box-shadow: 6px 2px 8px rgba(0,0,0,0.2);
   background: ${props => props.color};
 `

@@ -1,36 +1,33 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-
-
-
-import TabContainer from './components/TabContainer';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home, Contact, SkillPage, About, ProjectsPage } from './pages';
 import { AppTheme, GlobalStyles } from './styles';
+import { TabMenu } from './components';
+
+
 
 function App() {
+
+  
+
   return (
-    <>
-      <ThemeProvider theme={AppTheme}>
-        <>
-          <TabContainer color="#0277bd" index={0} label="Home">
-            <Home />
-          </TabContainer>
-          <TabContainer color="#00838f" index={1} label="About" >
-            <About />
-          </TabContainer>
-          <TabContainer color="#00695c" index={2} label="Projects" >
-            <ProjectsPage />
-          </TabContainer>
-          <TabContainer color="#2e7d32" index={3} label="Skills" >
-            <SkillPage />
-          </TabContainer>
-          <TabContainer color="#558b2f" index={4} label="Contact" >
-            <Contact />
-          </TabContainer>
-          <GlobalStyles />
-        </>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={AppTheme}>
+      <BrowserRouter>
+        <Routes>
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/projects' element={<ProjectsPage />} />
+            <Route path='/skills' element={<SkillPage />} />
+            <Route path='/contact' element={<Contact />} />
+          </>
+        </Routes>
+        {/* <TabMenu /> */}
+
+      </BrowserRouter>
+      <GlobalStyles />
+    </ThemeProvider>
   );
 }
 
