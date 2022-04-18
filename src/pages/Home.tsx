@@ -3,13 +3,8 @@ import styled from 'styled-components'
 import { slideIn } from './styles'
 
 export const Home: React.VFC = () => {
-  return (
-    <HomeContainer>
-      homehomehomehome
-    </HomeContainer>
-  )
+  return <HomeContainer>homehomehomehome</HomeContainer>
 }
-
 
 const HomeContainer = styled.div`
   position: absolute;

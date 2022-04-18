@@ -1,19 +1,17 @@
 import { DefaultTheme } from 'styled-components'
 
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      primary: string,
+      primary: string
       backgroundColorHome: string
     }
   }
 }
 
-
-
 export const AppTheme: DefaultTheme = {
   colors: {
     primary: '#FFE000',
-    backgroundColorHome: "linear-gradient(to right, tomato 0%, gold 100%)", 
-  }
+    backgroundColorHome: 'linear-gradient(to right, tomato 0%, gold 100%)',
+  },
 }

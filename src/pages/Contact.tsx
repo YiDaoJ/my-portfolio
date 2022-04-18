@@ -3,11 +3,7 @@ import styled from 'styled-components'
 import { slideIn } from './styles'
 
 export const Contact: React.VFC = () => {
-return (
-    <ContactContainer>
-      contact
-    </ContactContainer>
-  )
+  return <ContactContainer>contact</ContactContainer>
 }
 
 const ContactContainer = styled.div`
@@ -18,7 +14,6 @@ const ContactContainer = styled.div`
   background-color: #e8eaf6;
   animation: ${slideIn} 1s ease 1;
 `
-
 
 // const ContactPanel = styled.div`
 //   display: flex;
@@ -33,7 +28,7 @@ const ContactContainer = styled.div`
 // 	font-size: 1.3rem;
 //   margin-bottom: 3rem;
 //   font-weight: 400;
-  
+
 //   a:link {
 //     color: #F5DB3B;
 //     text-decoration: none;

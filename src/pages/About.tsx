@@ -2,15 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { slideIn } from './styles'
 
-
 export const About: React.FC = () => {
-  return (
-    <AboutContainer>
-      About
-    </AboutContainer>
-  )
+  return <AboutContainer>About</AboutContainer>
 }
-
 
 const AboutContainer = styled.div`
   position: absolute;
