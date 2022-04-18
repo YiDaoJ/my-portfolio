@@ -6,7 +6,10 @@ import { slideIn } from './styles'
 export const Home: React.VFC = () => {
   return (
     <Page>
-      <Main>homehomehomehome</Main>
+      <Main>
+        <div>{`Hi, I'm Xiao`}</div>
+        <div>Web Engineer, Front End Addict.</div>
+      </Main>
     </Page>
   )
 }
