@@ -1,14 +1,18 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import styled from 'styled-components'
 import TabMenu from './TabMenu'
 
 export const Layout: React.FC = ({children}) => {
   return (
-    <div className='layout'>
+    <LayoutContainer className='layout'>
       <TabMenu />
-      <div>
-        {children}
-      </div>
-    </div>
+      <Outlet />
+    </LayoutContainer>
   )
 }
+
+const LayoutContainer = styled.div`
+  height: 100%;
+`
 

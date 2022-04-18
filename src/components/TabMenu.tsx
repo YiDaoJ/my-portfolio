@@ -1,62 +1,82 @@
-import { observer } from 'mobx-react-lite'
-import React, { useCallback } from 'react'
+
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { Tab } from '.'
-import { useStore } from '../utils'
+
 
 const Tabs = [
   {
     label: "home",
-    color: "#0277bd"
+    color: "#e3f2fd",
+    path: ""
   },
   {
     label: "about",
-    color: "#00838f"
+    color: "#f9fbe7",
+    path: "about"
   },
   {
     label: "projects",
-    color: "#00695c"
-  },
-  {
-    label: "skills",
-    color: "#2e7d32"
+    color: "#fbe9e7",
+    path: "projects"
   },
   {
     label: "contact",
-    color: "#558b2f"
+    color: "#e8eaf6",
+    path: "contact"
   }
 ]
 
-export const TabMenu: React.VFC = observer(() => {
-
-  const store = useStore()
-
-  const handleOnSelect = useCallback((currentIndex: number) => {
-    store.updateCurrentIndex(currentIndex)
-  }, [store])
+export const TabMenu: React.VFC = () => {
 
   return (
-    <Nav>
+    <Nav className='navigation'>
       {
-        Tabs.map((tab, index) => 
-          <Tab 
-            key={tab.label}
-            label={tab.label} 
-            color={tab.color} 
-            index={index} 
-            isSelected={index === store.currentIndex} 
-            onClick={() => handleOnSelect(index)}
-          />
+        Tabs.map((tab) => 
+                <NavigationLink  
+                  to={`/${tab.path}`}  
+                  key={tab.label}
+                  color={tab.color} 
+                  >
+                  {tab.label}
+                </NavigationLink>
         )
       }
     </Nav>
   )
-})
+}
 
+                  // className={({ isActive }) =>
+                  //   isActive ? "open" : undefined
+                  // }
+                  // className={clsx("nav-item", {open: index === store.currentIndex})}
+                  // isSelected={index === store.currentIndex} 
 const Nav = styled.div`
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  
+`
+
+const NavigationLink = styled(NavLink)<{color: string}>`
+  height: 100%;
+  padding: 60px 5px;
+  font-family: apercu mono,sans-serif;
+  min-width: 60px;
+
+  position: relative;
+  will-change: width;
+  cursor: pointer;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  background-color: ${props => props.color};
+  transition: all 0.5s ease;
+  width: 60px;
+  &.active {
+    width: 100%;
+  }
 `
 
 export default TabMenu
