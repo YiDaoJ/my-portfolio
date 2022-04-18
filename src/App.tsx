@@ -8,9 +8,6 @@ import { Layout } from './components';
 
 
 function App() {
-
-  
-
   return (
     <ThemeProvider theme={AppTheme}>
       <BrowserRouter>

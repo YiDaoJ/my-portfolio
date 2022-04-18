@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { slideIn } from './styles'
 
 export const Home: React.VFC = () => {
   return (
-
-      <HomeContainer>
-        homehomehomehome
-      </HomeContainer>
+    <HomeContainer>
+      homehomehomehome
+    </HomeContainer>
   )
 }
+
 
 const HomeContainer = styled.div`
   position: absolute;
@@ -16,9 +17,7 @@ const HomeContainer = styled.div`
   width: calc(100% - 180px);
   background-color: #e3f2fd;
   padding: 3rem;
-  opacity: 1;
-  /* position: absolute;
-  z-index: 1000; */
+  animation: ${slideIn} 1s ease 1;
 `
 
 export default Home

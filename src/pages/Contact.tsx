@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { slideIn } from './styles'
 
 export const Contact: React.VFC = () => {
 return (
@@ -15,9 +16,7 @@ const ContactContainer = styled.div`
   width: calc(100% - 180px);
   margin-left: 180px;
   background-color: #e8eaf6;
-  opacity: 1;
-  /* position: absolute;
-  z-index: 1000; */
+  animation: ${slideIn} 1s ease 1;
 `
 
 
