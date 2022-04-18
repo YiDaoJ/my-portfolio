@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { PageContainer as Main } from '../components'
 import { slideIn } from './styles'
 
 export const About: React.FC = () => {
-  return <AboutContainer>About</AboutContainer>
+  return (
+    <Page>
+      <Main>About</Main>
+    </Page>
+  )
 }
 
-const AboutContainer = styled.div`
+const Page = styled.div`
   position: absolute;
   height: 100%;
   width: calc(100% - 180px);

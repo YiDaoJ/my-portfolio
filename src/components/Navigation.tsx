@@ -25,7 +25,7 @@ const Tabs = [
   },
 ]
 
-export const TabMenu: React.VFC = () => {
+export const Navigation: React.VFC = () => {
   return (
     <Nav className='navigation'>
       {Tabs.map((tab) => (
@@ -37,11 +37,6 @@ export const TabMenu: React.VFC = () => {
   )
 }
 
-// className={({ isActive }) =>
-//   isActive ? "open" : undefined
-// }
-// className={clsx("nav-item", {open: index === store.currentIndex})}
-// isSelected={index === store.currentIndex}
 const Nav = styled.div`
   padding: 0;
   margin: 0;
@@ -70,4 +65,4 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
   }
 `
 
-export default TabMenu
+export default Navigation

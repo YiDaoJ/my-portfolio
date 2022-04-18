@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { PageContainer as Main } from '../components'
 import { slideIn } from './styles'
 
 export const Contact: React.VFC = () => {
-  return <ContactContainer>contact</ContactContainer>
+  return (
+    <Page>
+      <Main>contact</Main>
+    </Page>
+  )
 }
 
-const ContactContainer = styled.div`
+const Page = styled.div`
   position: absolute;
   height: 100%;
   width: calc(100% - 180px);
