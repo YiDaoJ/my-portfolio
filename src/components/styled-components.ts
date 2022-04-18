@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const StyledH1 = styled.h1`
   font-size: 3rem;
@@ -10,7 +10,7 @@ export const StyledH1 = styled.h1`
 `
 
 export const StyledH2 = styled.h2`
-  color: #f1f8e9;
+  /* color: #f1f8e9; */
   font-weight: 400;
   line-height: 150%;
 `
@@ -19,12 +19,11 @@ export const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   padding: 2rem;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   font-family: 'Montserrat', sans-serif;
-
 `
