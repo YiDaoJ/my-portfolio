@@ -12,7 +12,7 @@ export const About: React.FC = () => {
           I am a front-end developer with 3+ years of professional experience,
           based in Duesseldorf.
           <br />
-          At the moment, I implement project written with ReactJS, Typescript,
+          At the moment, I implement projects written with ReactJS, Typescript,
           NodeJs.
           <br />
           My aim is to become a fullstack developer.
@@ -52,8 +52,8 @@ const Page = styled.div`
   height: 100%;
   width: calc(100% - 180px);
   margin-left: 60px;
-  background-color: #f9fbe7;
-  animation: ${slideIn} 1s ease 1;
+  background-color: #aacc00;
+  animation: ${slideIn} 1.5s ease 1;
 `
 const SkillPointsContainer = styled.div`
   width: 100%;

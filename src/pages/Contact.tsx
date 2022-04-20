@@ -11,6 +11,7 @@ import {
   PageContainer as Main,
   StyledH1,
   StyledH2,
+  StyledLink,
 } from '../components'
 import { slideIn } from './styles'
 
@@ -21,16 +22,16 @@ export const Contact: React.VFC = () => {
         <StyledH1>Let&apos;s talk!</StyledH1>
 
         <StyledEmail>
-          <a
+          <StyledLink
             href='mailto:jiang.chuxiao@gmail.com'
             target='_blank'
             rel='noreferrer'
           >
             jiang.chuxiao@gmail.com
-          </a>
+          </StyledLink>
         </StyledEmail>
 
-        <StyledH2>Or find me on:</StyledH2>
+        <SubTitle>Or find me on:</SubTitle>
         <ContactPanel>
           <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
             <FaGithubAlt />
@@ -58,15 +59,24 @@ const Page = styled.div`
   height: 100%;
   width: calc(100% - 180px);
   margin-left: 180px;
-  background-color: #e8eaf6;
-  animation: ${slideIn} 1s ease 1;
+  background-color: #64b5f6;
+  animation: ${slideIn} 1.5s ease 1;
+`
+
+const SubTitle = styled.div`
+  font-size: 2rem;
+  color: #f1f8e9;
+  text-shadow: 1px 1px #cddc39;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 2rem;
 `
 
 const ContactPanel = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
+  justify-content: flex-start;
+  gap: 2rem;
   width: 100%;
 `
 
@@ -75,20 +85,7 @@ const StyledEmail = styled.div`
   font-size: 1.3rem;
   margin-bottom: 3rem;
   font-weight: 400;
-
-  a:link {
-    color: #f5db3b;
-    text-decoration: none;
-    transition: all 300ms ease;
-  }
-
-  a:visited {
-    color: #f5db3b;
-  }
-
-  a:hover {
-    color: white;
-  }
+  color: #f1f8e9;
 `
 
 export default Contact
