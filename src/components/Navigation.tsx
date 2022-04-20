@@ -1,36 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-
-const Tabs = [
-  {
-    label: 'home',
-    color: '#e3f2fd',
-    path: '',
-  },
-  {
-    label: 'about',
-    color: '#f9fbe7',
-    path: 'about',
-  },
-  {
-    label: 'projects',
-    color: '#fbe9e7',
-    path: 'projects',
-  },
-  {
-    label: 'contact',
-    color: '#e8eaf6',
-    path: 'contact',
-  },
-]
+import { SiAboutdotme } from 'react-icons/si'
+import { GrContactInfo } from 'react-icons/gr'
+import { BiCollection, BiHomeSmile } from 'react-icons/bi'
 
 export const Navigation: React.VFC = () => {
   return (
     <Nav className='navigation'>
       {Tabs.map((tab) => (
         <NavigationLink to={`/${tab.path}`} key={tab.label} color={tab.color}>
-          {tab.label}
+          <span className='nav-icon'>{tab.icon}</span>
+          <span className='nav-text'>{tab.label}</span>
         </NavigationLink>
       ))}
     </Nav>
@@ -48,21 +29,79 @@ const Nav = styled.div`
 `
 
 const NavigationLink = styled(NavLink)<{ color: string }>`
+  position: relative;
   height: 100%;
+  width: 60px;
+  min-width: 60px;
   padding: 60px 5px;
   font-family: apercu mono, sans-serif;
-  min-width: 60px;
 
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15rem;
+
   will-change: width;
   cursor: pointer;
   transform: matrix(1, 0, 0, 1, 0, 0);
   background-color: ${(props) => props.color};
   transition: all 0.5s ease;
-  width: 60px;
+  text-decoration: none;
+  color: #212121;
+
   &.active {
     width: 100%;
   }
+
+  span {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span.nav-icon {
+    font-size: 2rem;
+
+    &:hover {
+      transition: all 600ms cubic-bezier(0.99, 0, 0.57, 0.94);
+      transform: rotate(360deg);
+    }
+  }
+
+  span.nav-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: capitalize;
+  }
 `
+
+const Tabs = [
+  {
+    label: 'home',
+    color: '#FFC93C',
+    path: '',
+    icon: <BiHomeSmile />,
+  },
+  {
+    label: 'about',
+    color: '#aacc00',
+    path: 'about',
+    icon: <SiAboutdotme />,
+  },
+  {
+    label: 'projects',
+    color: '#e1f5fe',
+    path: 'projects',
+    icon: <BiCollection />,
+  },
+  {
+    label: 'contact',
+    color: '#64b5f6',
+    path: 'contact',
+    icon: <GrContactInfo />,
+  },
+]
 
 export default Navigation

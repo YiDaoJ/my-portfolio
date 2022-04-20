@@ -23,18 +23,12 @@ const StyledIconLink = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  /* background-color: #cddc39; */
+  /* width: 50px;
+  height: 50px; */
   border-radius: 50%;
   font-size: 2em;
   text-align: center;
   text-decoration: none;
-
-  /* &:hover {
-    transition: border-radius .75s ease;
-	  border-radius: 4px;
-  } */
 
   &:hover {
     color: #ef43a1;
