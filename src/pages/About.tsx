@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageContainer as Main, StyledH2 } from '../components'
-import { slideIn } from './styles'
+import { fadeIn } from './styles'
 
 export const About: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ export const About: React.FC = () => {
           constantly enhance my skills and dive deeper, using the following
           tools.
         </StyledH2>
-        <SkillPointsContainer>
+        <SkillPointsContainer className='skills'>
           <div>HTML5</div>
           <div>CSS 3</div>
           <div>Sass</div>
@@ -53,7 +53,10 @@ const Page = styled.div`
   width: calc(100% - 180px);
   margin-left: 60px;
   background-color: #aacc00;
-  animation: ${slideIn} 1.5s ease 1;
+  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
 `
 const SkillPointsContainer = styled.div`
   width: 100%;
@@ -63,6 +66,7 @@ const SkillPointsContainer = styled.div`
   justify-content: flex-start;
   gap: 1rem;
   padding: 2rem 0;
+  font-size: 1.2rem;
 
   div {
     flex-grow: 0;

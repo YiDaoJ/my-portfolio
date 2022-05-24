@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, PageContainer as Main, ProjectPreview } from '../components'
-import { slideIn } from './styles'
+import { PageContainer as Main, ProjectPreview } from '../components'
+import { fadeIn } from './styles'
 
 const LinksReactMovingText = [
   {
@@ -35,7 +35,9 @@ const Page = styled.div`
   width: calc(100% - 180px);
   margin-left: 120px;
   background-color: #e1f5fe;
-  animation: ${slideIn} 1.5s ease 1;
+  opacity: 0;
+  visibility: hidden;
+  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
+  top: 0;
 `
-
 export default ProjectsPage

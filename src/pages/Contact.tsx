@@ -10,10 +10,9 @@ import {
   IconLink,
   PageContainer as Main,
   StyledH1,
-  StyledH2,
   StyledLink,
 } from '../components'
-import { slideIn } from './styles'
+import { fadeIn } from './styles'
 
 export const Contact: React.VFC = () => {
   return (
@@ -60,7 +59,10 @@ const Page = styled.div`
   width: calc(100% - 180px);
   margin-left: 180px;
   background-color: #64b5f6;
-  animation: ${slideIn} 1.5s ease 1;
+  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
 `
 
 const SubTitle = styled.div`

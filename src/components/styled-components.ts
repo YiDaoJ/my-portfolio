@@ -18,8 +18,21 @@ export const RegularH1 = styled.h1`
 
 export const StyledH2 = styled.h2`
   /* color: #f1f8e9; */
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
+`
+
+const fadeIn = keyframes`
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
 `
 
 export const PageContainer = styled.div`
@@ -33,6 +46,8 @@ export const PageContainer = styled.div`
   align-items: flex-start;
 
   font-family: 'Montserrat', sans-serif;
+  opacity: 0;
+  animation: ${fadeIn} 0.5s ease 1 1s forwards;
 `
 
 const swing = keyframes`
@@ -73,4 +88,59 @@ export const StyledLink = styled.a`
   &:hover {
     animation: ${swing} 0.8s ease-in-out 1;
   }
+`
+
+export const TextLink = styled.a`
+  display: inline-block;
+  position: relative;
+  color: #343434;
+  text-decoration: none;
+  padding: 0 6px;
+  &:before,
+  &:after {
+    will-change: transform;
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+  }
+  &:before {
+    transition: 100ms ease-out 50ms;
+    transform-origin: 0 24px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #c1d9f4;
+  }
+  &:after {
+    transition: 50ms ease-out;
+    transform: scaleX(0);
+    transform-origin: left center;
+    bottom: -9px;
+    right: -12px;
+    border: 8px solid transparent;
+    border-left-color: #91c0f7;
+  }
+  &:hover {
+    &:before {
+      transition: 100ms ease-out;
+      transform: scaleY(0.18);
+      background: #91c0f7;
+    }
+    &:after {
+      transition: 50ms ease-out 100ms;
+      transform: none;
+    }
+  }
+  /* &:active {
+    &:before {
+      transition: 100ms ease-in;
+      background: mix(#f1f1f1, #0077ff, 40%);
+    }
+    &:after {
+      transition: 100ms ease-in;
+      border-left-color: mix(#f1f1f1, #0077ff, 40%);
+    }
+  } */
 `

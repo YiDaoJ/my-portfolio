@@ -1,7 +1,7 @@
 import React, { ReactNode, useRef } from 'react'
 import styled from 'styled-components'
 import { BiLinkExternal } from 'react-icons/bi'
-import { StyledLink } from './styled-components'
+import { StyledLink, TextLink } from './styled-components'
 
 interface ProjectPreviewProps {
   title: string
@@ -25,10 +25,10 @@ export const ProjectPreview: React.VFC<ProjectPreviewProps> = ({
         {Boolean(links) && (
           <div className='project-preview__links'>
             {links?.map((link) => (
-              <StyledLink href={link.url} target='_blank' key={link.title}>
+              <TextLink href={link.url} target='_blank' key={link.title}>
                 <span>{link.title}</span>
-                <BiLinkExternal />
-              </StyledLink>
+                {/* <BiLinkExternal /> */}
+              </TextLink>
             ))}
           </div>
         )}

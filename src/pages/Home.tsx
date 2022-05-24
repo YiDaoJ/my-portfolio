@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageContainer as Main, RegularH1, StyledH2 } from '../components'
-import { slideIn } from './styles'
+import { fadeIn } from './styles'
 
 export const Home: React.VFC = () => {
   return (
@@ -20,7 +20,10 @@ const Page = styled.div`
   width: calc(100% - 180px);
   background-color: #ffc93c;
   padding: 3rem;
-  animation: ${slideIn} 1.5s ease 1;
+  opacity: 0;
+  visibility: hidden;
+  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
+  top: 0;
 `
 
 export default Home
