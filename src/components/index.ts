@@ -1,5 +1,6 @@
 export * from './styled-components'
 export { IconLink } from './link/icon-link'
+export { TextLink } from './link/text-link'
 export { Navigation } from './nav'
 export { Layout } from './layout'
 export { ProjectPreview } from './project-preview'

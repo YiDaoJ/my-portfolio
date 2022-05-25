@@ -4,13 +4,13 @@ import { PageContainer, StyledH2 } from '../components'
 
 export const About: React.FC = () => {
   return (
-    <PageContainer index={1} background='#aacc00'>
+    <PageContainer index={1} background='#14B8A6'>
       <StyledH2>
         Hi, My Name ist Chuxiao Jiang. <br />
-        I am a front-end developer with 3+ years of professional experience,
-        based in Duesseldorf.
+        I am a front-end developer with 4+ years of experience in
+        web-development, based in Duesseldorf.
         <br />
-        At the moment, I implement projects written with ReactJS, Typescript,
+        At the moment, I implement projects written with ReactJS, Typescript and
         NodeJs.
         <br />
         My aim is to become a fullstack developer.

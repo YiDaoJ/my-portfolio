@@ -86,19 +86,19 @@ const Tabs = [
   },
   {
     label: 'about',
-    color: '#aacc00',
+    color: '#14B8A6',
     path: 'about',
     icon: <SiAboutdotme />,
   },
   {
     label: 'projects',
-    color: '#e1f5fe',
+    color: '#EF4444',
     path: 'projects',
     icon: <BiCollection />,
   },
   {
     label: 'contact',
-    color: '#64b5f6',
+    color: '#0284C7',
     path: 'contact',
     icon: <GrContactInfo />,
   },

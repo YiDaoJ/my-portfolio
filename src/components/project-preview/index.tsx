@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { TextLink } from '../styled-components'
+import { TextLink } from '../link/text-link'
 
 interface ProjectPreviewProps {
   title: string
-  description: string
+  description: string | ReactNode | ReactNode[]
   image: string
   links?: { title: string; url: string }[]
 }
@@ -53,15 +53,20 @@ const Img = styled.div<{ url: string }>`
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 8px;
 `
 
 const Content = styled.div`
-  width: 450px;
+  width: 50vw;
   height: auto;
-  transform: translateY(-80px);
-  background-color: #eb9d00;
-  padding: 1rem;
-  color: #f1f8e9;
+  background-color: #fcd34d;
+  padding: 1.5rem 2rem;
+  color: #18181b;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translateY(-50%);
+  border-radius: 8px;
 
   .project-preview__title {
     font-size: 1.5rem;
@@ -76,6 +81,14 @@ const Content = styled.div`
     font-size: 1.1rem;
     line-height: 150%;
     white-space: pre-wrap;
+
+    p {
+      margin: 0;
+    }
+
+    .paragraph_with_space {
+      margin-top: 1rem;
+    }
   }
 
   .project-preview__links {

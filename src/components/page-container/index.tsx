@@ -4,17 +4,19 @@ import styled, { keyframes } from 'styled-components'
 interface PageContainerProps {
   index: number
   background: string
+  fullHeight?: boolean
   children: ReactNode | ReactNode[]
 }
 
 export const PageContainer: React.FC<PageContainerProps> = ({
   index = 0,
+  fullHeight = true,
   background,
   children,
 }) => {
   return (
     <Page index={index} background={background}>
-      <Main>{children}</Main>
+      <Main fullHeight={fullHeight}>{children}</Main>
     </Page>
   )
 }
@@ -41,11 +43,18 @@ const Page = styled.div<{ index: number; background: string }>`
   visibility: hidden;
   animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
   top: 0;
+
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `
 
-export const Main = styled.div`
+export const Main = styled.div<{ fullHeight: boolean }>`
   width: 100%;
-  height: 100%;
+  height: ${({ fullHeight }) => (fullHeight ? '100%' : 'auto')};
   padding: 5rem;
 
   display: flex;

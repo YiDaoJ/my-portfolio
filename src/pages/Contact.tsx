@@ -5,28 +5,41 @@ import {
   FaCodepen,
   FaFacebookSquare,
   FaBloggerB,
+  FaLinkedinIn,
 } from 'react-icons/fa'
-import { IconLink, PageContainer, StyledH1, StyledLink } from '../components'
+import {
+  IconLink,
+  PageContainer,
+  StyledH1,
+  StyledLink,
+  TextLink,
+} from '../components'
 
 export const Contact: React.VFC = () => {
   return (
-    <PageContainer index={3} background='#64b5f6'>
+    <PageContainer index={3} background='#0284C7'>
       <StyledH1>Let&apos;s talk!</StyledH1>
 
       <StyledEmail>
-        <StyledLink
+        <TextLink
           href='mailto:jiang.chuxiao@gmail.com'
           target='_blank'
           rel='noreferrer'
         >
           jiang.chuxiao@gmail.com
-        </StyledLink>
+        </TextLink>
       </StyledEmail>
 
       <SubTitle>Or find me on:</SubTitle>
       <ContactPanel>
         <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
           <FaGithubAlt />
+        </IconLink>
+        <IconLink
+          linkURL='https://www.linkedin.com/in/chuxiao-jiang-406b0b239/'
+          title='LinkedIn'
+        >
+          <FaLinkedinIn />
         </IconLink>
         <IconLink linkURL='http://codepen.io/yidaoJ/' title='CodePen'>
           <FaCodepen />
@@ -63,11 +76,11 @@ const ContactPanel = styled.div`
 `
 
 const StyledEmail = styled.div`
-  text-align: center;
+  /* text-align: center;
   font-size: 1.3rem;
   margin-bottom: 3rem;
   font-weight: 400;
-  color: #f1f8e9;
+  color: #f1f8e9; */
 `
 
 export default Contact
