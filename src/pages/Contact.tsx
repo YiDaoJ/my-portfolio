@@ -6,64 +6,44 @@ import {
   FaFacebookSquare,
   FaBloggerB,
 } from 'react-icons/fa'
-import {
-  IconLink,
-  PageContainer as Main,
-  StyledH1,
-  StyledLink,
-} from '../components'
-import { fadeIn } from './styles'
+import { IconLink, PageContainer, StyledH1, StyledLink } from '../components'
 
 export const Contact: React.VFC = () => {
   return (
-    <Page>
-      <Main>
-        <StyledH1>Let&apos;s talk!</StyledH1>
+    <PageContainer index={3} background='#64b5f6'>
+      <StyledH1>Let&apos;s talk!</StyledH1>
 
-        <StyledEmail>
-          <StyledLink
-            href='mailto:jiang.chuxiao@gmail.com'
-            target='_blank'
-            rel='noreferrer'
-          >
-            jiang.chuxiao@gmail.com
-          </StyledLink>
-        </StyledEmail>
+      <StyledEmail>
+        <StyledLink
+          href='mailto:jiang.chuxiao@gmail.com'
+          target='_blank'
+          rel='noreferrer'
+        >
+          jiang.chuxiao@gmail.com
+        </StyledLink>
+      </StyledEmail>
 
-        <SubTitle>Or find me on:</SubTitle>
-        <ContactPanel>
-          <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
-            <FaGithubAlt />
-          </IconLink>
-          <IconLink linkURL='http://codepen.io/yidaoJ/' title='CodePen'>
-            <FaCodepen />
-          </IconLink>
-          <IconLink
-            linkURL='https://www.facebook.com/chuxiao.jiang'
-            title='FaceBook'
-          >
-            <FaFacebookSquare />
-          </IconLink>
-          <IconLink linkURL='https://yidaoj.github.io/' title='Personal Blog'>
-            <FaBloggerB />
-          </IconLink>
-        </ContactPanel>
-      </Main>
-    </Page>
+      <SubTitle>Or find me on:</SubTitle>
+      <ContactPanel>
+        <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
+          <FaGithubAlt />
+        </IconLink>
+        <IconLink linkURL='http://codepen.io/yidaoJ/' title='CodePen'>
+          <FaCodepen />
+        </IconLink>
+        <IconLink
+          linkURL='https://www.facebook.com/chuxiao.jiang'
+          title='FaceBook'
+        >
+          <FaFacebookSquare />
+        </IconLink>
+        <IconLink linkURL='https://yidaoj.github.io/' title='Personal Blog'>
+          <FaBloggerB />
+        </IconLink>
+      </ContactPanel>
+    </PageContainer>
   )
 }
-
-const Page = styled.div`
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 180px);
-  margin-left: 180px;
-  background-color: #64b5f6;
-  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
-`
 
 const SubTitle = styled.div`
   font-size: 2rem;

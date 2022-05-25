@@ -1,7 +1,6 @@
-import React, { ReactNode, useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { BiLinkExternal } from 'react-icons/bi'
-import { StyledLink, TextLink } from './styled-components'
+import { TextLink } from '../styled-components'
 
 interface ProjectPreviewProps {
   title: string

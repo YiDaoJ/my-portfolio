@@ -1,29 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
-import { PageContainer as Main, RegularH1, StyledH2 } from '../components'
-import { fadeIn } from './styles'
+import { PageContainer, RegularH1, StyledH2 } from '../components'
 
 export const Home: React.VFC = () => {
   return (
-    <Page>
-      <Main>
-        <RegularH1>{`Hi, I'm Xiao`}</RegularH1>
-        <StyledH2>Web Engineer, Front End Addict.</StyledH2>
-      </Main>
-    </Page>
+    <PageContainer index={0} background='#ffc93c'>
+      <RegularH1>{`Hi, I'm Xiao`}</RegularH1>
+      <StyledH2>Web Engineer, Front End Addict.</StyledH2>
+    </PageContainer>
   )
 }
-
-const Page = styled.div`
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 180px);
-  background-color: #ffc93c;
-  padding: 3rem;
-  opacity: 0;
-  visibility: hidden;
-  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
-  top: 0;
-`
 
 export default Home

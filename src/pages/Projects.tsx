@@ -1,7 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import { PageContainer as Main, ProjectPreview } from '../components'
-import { fadeIn } from './styles'
+import { PageContainer, ProjectPreview } from '../components'
 
 const LinksReactMovingText = [
   {
@@ -16,28 +14,14 @@ const LinksReactMovingText = [
 
 export const ProjectsPage: React.VFC = () => {
   return (
-    <Page>
-      <Main>
-        <ProjectPreview
-          title='react-moving-text'
-          description='A library for animated texts built with React and CSS Animation.'
-          image='https://s2.loli.net/2022/04/19/BzroIbfMD4nYSwC.png'
-          links={LinksReactMovingText}
-        />
-      </Main>
-    </Page>
+    <PageContainer index={2} background='#e1f5fe'>
+      <ProjectPreview
+        title='react-moving-text'
+        description='A library for animated texts built with React and CSS Animation.'
+        image='https://s2.loli.net/2022/04/19/BzroIbfMD4nYSwC.png'
+        links={LinksReactMovingText}
+      />
+    </PageContainer>
   )
 }
-
-const Page = styled.div`
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 180px);
-  margin-left: 120px;
-  background-color: #e1f5fe;
-  opacity: 0;
-  visibility: hidden;
-  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
-  top: 0;
-`
 export default ProjectsPage

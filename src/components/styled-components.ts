@@ -23,33 +23,6 @@ export const StyledH2 = styled.h2`
   line-height: 150%;
 `
 
-const fadeIn = keyframes`
-  from {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  to {
-    visibility: visible;
-    opacity: 1;
-  }
-`
-
-export const PageContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 5rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-
-  font-family: 'Montserrat', sans-serif;
-  opacity: 0;
-  animation: ${fadeIn} 0.5s ease 1 1s forwards;
-`
-
 const swing = keyframes`
   0% {
     transform: rotateZ(0deg);

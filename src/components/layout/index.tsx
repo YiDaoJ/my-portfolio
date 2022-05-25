@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
-import Navigation from './Navigation'
+import Navigation from '../nav'
 
 export const Layout: React.FC = () => {
   return (

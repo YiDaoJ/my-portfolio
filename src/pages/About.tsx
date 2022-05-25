@@ -1,63 +1,48 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PageContainer as Main, StyledH2 } from '../components'
-import { fadeIn } from './styles'
+import { PageContainer, StyledH2 } from '../components'
 
 export const About: React.FC = () => {
   return (
-    <Page>
-      <Main>
-        <StyledH2>
-          Hi, My Name ist Chuxiao Jiang. <br />
-          I am a front-end developer with 3+ years of professional experience,
-          based in Duesseldorf.
-          <br />
-          At the moment, I implement projects written with ReactJS, Typescript,
-          NodeJs.
-          <br />
-          My aim is to become a fullstack developer.
-          <br />
-          In my free time, I try to dive deeper in web-development, also learn
-          new technologies in dev-op like kubernetes.
-        </StyledH2>
+    <PageContainer index={1} background='#aacc00'>
+      <StyledH2>
+        Hi, My Name ist Chuxiao Jiang. <br />
+        I am a front-end developer with 3+ years of professional experience,
+        based in Duesseldorf.
+        <br />
+        At the moment, I implement projects written with ReactJS, Typescript,
+        NodeJs.
+        <br />
+        My aim is to become a fullstack developer.
+        <br />
+        In my free time, I try to dive deeper in web-development, also learn new
+        technologies in dev-op like kubernetes.
+      </StyledH2>
 
-        <StyledH2>
-          I have started frontend development, since I was a student.
-          <br />
-          For about 4 years, I have acquired valuable experience, and still
-          constantly enhance my skills and dive deeper, using the following
-          tools.
-        </StyledH2>
-        <SkillPointsContainer className='skills'>
-          <div>HTML5</div>
-          <div>CSS 3</div>
-          <div>Sass</div>
-          <div>Javascript</div>
-          <div>jQuery</div>
-          <div>React</div>
-          <div>Typescript</div>
-          <div>Next Js</div>
-          <div>gatsby</div>
-          <div>Git</div>
-          <div>graphql</div>
-          <div>kubernetes</div>
-        </SkillPointsContainer>
-      </Main>
-    </Page>
+      <StyledH2>
+        I have started frontend development, since I was a student.
+        <br />
+        For about 4 years, I have acquired valuable experience, and still
+        constantly enhance my skills and dive deeper, using the following tools.
+      </StyledH2>
+      <SkillPointsContainer className='skills'>
+        <div>HTML5</div>
+        <div>CSS 3</div>
+        <div>Sass</div>
+        <div>Javascript</div>
+        <div>jQuery</div>
+        <div>React</div>
+        <div>Typescript</div>
+        <div>Next Js</div>
+        <div>gatsby</div>
+        <div>Git</div>
+        <div>graphql</div>
+        <div>kubernetes</div>
+      </SkillPointsContainer>
+    </PageContainer>
   )
 }
 
-const Page = styled.div`
-  position: absolute;
-  height: 100%;
-  width: calc(100% - 180px);
-  margin-left: 60px;
-  background-color: #aacc00;
-  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
-  top: 0;
-  visibility: hidden;
-  opacity: 0;
-`
 const SkillPointsContainer = styled.div`
   width: 100%;
   display: flex;
