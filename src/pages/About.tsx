@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PageContainer, StyledH2 } from '../components'
+import { PageContainer, SkillCard, StyledH2 } from '../components'
 
 export const About: React.FC = () => {
   return (
@@ -26,36 +26,31 @@ export const About: React.FC = () => {
         constantly enhance my skills and dive deeper, using the following tools.
       </StyledH2>
       <SkillPointsContainer className='skills'>
-        <div>HTML5</div>
-        <div>CSS 3</div>
-        <div>Sass</div>
-        <div>Javascript</div>
-        <div>jQuery</div>
-        <div>React</div>
-        <div>Typescript</div>
-        <div>Next Js</div>
-        <div>gatsby</div>
-        <div>Git</div>
-        <div>graphql</div>
-        <div>kubernetes</div>
+        <SkillCard
+          title='5+ years experience'
+          skills={['HTML', 'CSS', 'Javascript']}
+        />
+        <SkillCard
+          title='3+ years experience'
+          skills={['React', 'Typescript', 'NodeJS', 'Git']}
+        />
+        <SkillCard
+          title='1+ years experience'
+          skills={['SASS', 'Java', 'jQuery']}
+        />
+        <SkillCard
+          title='Basic knowledge'
+          skills={['SQL', 'GraphQL', 'Docker', 'Kubernetes']}
+        />
       </SkillPointsContainer>
     </PageContainer>
   )
 }
 
 const SkillPointsContainer = styled.div`
-  width: 100%;
+  width: 60%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
   box-sizing: border-box;
-  justify-content: flex-start;
-  gap: 1rem;
-  padding: 2rem 0;
-  font-size: 1.2rem;
-
-  div {
-    flex-grow: 0;
-    max-width: 25%;
-    flex-basis: 25%;
-  }
 `
