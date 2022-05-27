@@ -40,7 +40,7 @@ export const StyledTextLink = styled.a`
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 6px;
+    border-radius: 2px;
     background: #f87171;
   }
   &:after {

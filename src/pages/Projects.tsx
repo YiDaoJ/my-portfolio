@@ -52,7 +52,7 @@ export const ProjectsPage: React.VFC = () => {
         <ProjectPreview
           title='Single-Page-Applications for municipal utility efficiency network '
           description='static websites are built with react and typescript, whose contents store in headless CMS strapi. Communication between front-end and back-end is via REST-Api realised.'
-          image='https://www.42ds.com/api/uploads/42ds_evu_cloud_ddebe46555.png'
+          image='https://s2.loli.net/2022/05/28/GHfsUb4qdJ9SwpK.png'
           links={LinksWebsites}
         />
       </FlexContainer>

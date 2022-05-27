@@ -32,14 +32,16 @@ const SkillPointsContainer = styled.div`
   height: auto;
   padding: 0.8rem 1.5rem 1rem;
   border-radius: 1rem;
-  background-color: #2dd4bf;
-  color: #1e293b;
+  background-color: #0d9488;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  color: #dcfce7;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
+  cursor: default;
+  /* gap: 1rem; */
 
   .skill-card__title {
     font-size: 1.3rem;
@@ -49,8 +51,9 @@ const SkillPointsContainer = styled.div`
   .skill-card__divider {
     width: 100%;
     height: 2px;
-    background-color: #bbf7d0;
+    background-color: #14b8a6;
     border-radius: 0.5rem;
+    margin: 0.5rem 0 1rem;
   }
 
   .skill-card__content {

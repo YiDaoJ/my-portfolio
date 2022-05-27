@@ -7,18 +7,13 @@ import {
   FaBloggerB,
   FaLinkedinIn,
 } from 'react-icons/fa'
-import {
-  IconLink,
-  PageContainer,
-  StyledH1,
-  StyledLink,
-  TextLink,
-} from '../components'
+import { IconLink, PageContainer, RegularH1, TextLink } from '../components'
 
 export const Contact: React.VFC = () => {
   return (
     <PageContainer index={3} background='#0284C7'>
-      <StyledH1>Let&apos;s talk!</StyledH1>
+      <Img url='https://lh3.googleusercontent.com/fVj7DhChjs7SN1-23-u7TDarNT2hP9m7GWb6LQM_-55HjJhIU_ZyQSdYYfg7oVGJnmH0QnIQfEfedcOq__YUjAYJvrmE--CgqCp48Z6gvUwQV0uxTcjcB3YGlHFfpJKrWP8YWDu_fg=w2400' />
+      <RegularH1>Let&apos;s talk!</RegularH1>
 
       <StyledEmail>
         <TextLink
@@ -81,6 +76,15 @@ const StyledEmail = styled.div`
   margin-bottom: 3rem;
   font-weight: 400;
   color: #f1f8e9; */
+`
+
+const Img = styled.div<{ url: string }>`
+  width: 400px;
+  height: 600px;
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 12px rgba(0, 0, 0, 0.2); */
+  background-image: url(${(props) => props.url});
+  background-repeat: no-repeat;
+  background-size: contain;
 `
 
 export default Contact

@@ -86,7 +86,7 @@ const Tabs = [
   },
   {
     label: 'about',
-    color: '#14B8A6',
+    color: '#DCFCE7',
     path: 'about',
     icon: <SiAboutdotme />,
   },

@@ -60,7 +60,7 @@ export const Main = styled.div<{ fullHeight: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   font-family: 'Montserrat', sans-serif;
   opacity: 0;

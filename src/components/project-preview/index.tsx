@@ -18,7 +18,7 @@ export const ProjectPreview: React.VFC<ProjectPreviewProps> = ({
   return (
     <PreviewContainer>
       <Img url={image} />
-      <Content>
+      <Content className='project-preview__content'>
         <div className='project-preview__title'>{title}</div>
         <div className='project-preview__description'>{description}</div>
         {Boolean(links) && (
@@ -49,7 +49,7 @@ const PreviewContainer = styled.div`
 const Img = styled.div<{ url: string }>`
   width: 500px;
   height: 320px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 12px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 12px rgba(0, 0, 0, 0.2); */
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,6 +67,7 @@ const Content = styled.div`
   left: 90%;
   transform: translateY(-50%);
   border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 
   .project-preview__title {
     font-size: 1.5rem;

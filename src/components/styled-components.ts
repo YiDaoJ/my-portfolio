@@ -12,7 +12,7 @@ export const StyledH1 = styled.h1`
 
 export const RegularH1 = styled.h1`
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 150%;
 `
 
