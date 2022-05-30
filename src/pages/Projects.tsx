@@ -13,16 +13,16 @@ const LinksReactMovingText = [
   },
 ]
 
-// const LinksWebsites = [
-//   {
-//     title: 'Website 1',
-//     url: 'https://www.42ds.com/',
-//   },
-//   {
-//     title: 'Website 2',
-//     url: 'https://www.beyonddialog.com/',
-//   },
-// ]
+const LinksWebsites = [
+  {
+    title: 'Website 1',
+    url: 'https://www.42ds.com/',
+  },
+  {
+    title: 'Website 2',
+    url: 'https://www.beyonddialog.com/',
+  },
+]
 
 export const ProjectsPage: React.VFC = () => {
   return (
