@@ -7,11 +7,7 @@ interface SkillCardProps {
   color?: string
 }
 
-export const SkillCard: React.VFC<SkillCardProps> = ({
-  title,
-  skills,
-  color,
-}) => {
+export const SkillCard: React.VFC<SkillCardProps> = ({ title, skills }) => {
   return (
     <SkillPointsContainer>
       <div className='skill-card__title'>{title}</div>
