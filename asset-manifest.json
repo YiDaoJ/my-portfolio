@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "http://yidaoyidao.cc/static/js/main.1089d506.js",
+    "static/js/787.128fc6e9.chunk.js": "http://yidaoyidao.cc/static/js/787.128fc6e9.chunk.js",
+    "index.html": "http://yidaoyidao.cc/index.html",
+    "main.1089d506.js.map": "http://yidaoyidao.cc/static/js/main.1089d506.js.map",
+    "787.128fc6e9.chunk.js.map": "http://yidaoyidao.cc/static/js/787.128fc6e9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.1089d506.js"
+  ]
+}
