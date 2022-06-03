@@ -1,7 +1,7 @@
 import React from 'react'
 import { PageContainer, RegularH1, StyledH2 } from '../components'
 
-export const Home: React.VFC = () => {
+export const Home: React.FC = () => {
   return (
     <PageContainer index={0} background='#ffc93c'>
       <RegularH1>{`Hi, I'm Xiao`}</RegularH1>

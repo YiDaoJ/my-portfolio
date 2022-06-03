@@ -1,11 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { PropsWithChildren, ReactNode } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-interface PageContainerProps {
+interface PageContainerProps extends PropsWithChildren<unknown> {
   index: number
   background: string
   fullHeight?: boolean
-  children: ReactNode | ReactNode[]
 }
 
 export const PageContainer: React.FC<PageContainerProps> = ({

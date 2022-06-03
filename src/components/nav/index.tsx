@@ -5,7 +5,7 @@ import { SiAboutdotme } from 'react-icons/si'
 import { GrContactInfo } from 'react-icons/gr'
 import { BiCollection, BiHomeSmile } from 'react-icons/bi'
 
-export const Navigation: React.VFC = () => {
+export const Navigation: React.FC = () => {
   return (
     <Nav className='navigation'>
       {Tabs.map((tab) => (

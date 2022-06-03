@@ -5,12 +5,9 @@ export const AppStore = new ApplicationStore()
 
 const StoreContext = createContext<ApplicationStore>(AppStore)
 
-export const StoreProvider: React.FC = ({
+export const StoreProvider: React.FC<PropsWithChildren<unknown>> = ({
   children,
-}: // eslint-disable-next-line @typescript-eslint/ban-types
-PropsWithChildren<{}>) => (
-  <StoreContext.Provider value={AppStore}>{children}</StoreContext.Provider>
-)
+}) => <StoreContext.Provider value={AppStore}>{children}</StoreContext.Provider>
 
 export const useStore = () => {
   const store = useContext(StoreContext)

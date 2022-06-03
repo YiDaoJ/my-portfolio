@@ -24,7 +24,7 @@ const LinksReactMovingText = [
 //   },
 // ]
 
-export const ProjectsPage: React.VFC = () => {
+export const ProjectsPage: React.FC = () => {
   return (
     <PageContainer index={2} background='#EF4444' fullHeight={false}>
       <FlexContainer>
