@@ -18,6 +18,8 @@ root.render(
           justifyContent: 'center',
           alignItems: 'center',
           gap: '1.5rem',
+          margin: '0',
+          padding: '0',
         }}
       >
         <div>WIP🚧</div>
