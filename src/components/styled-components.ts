@@ -4,20 +4,20 @@ export const StyledH1 = styled.h1`
   font-size: 3rem;
   text-align: center;
   color: #f1f8e9;
-  text-shadow: 1px 3px #cddc39;
+  /* text-shadow: 1px 3px #cddc39; */
   font-weight: 500;
   letter-spacing: 0;
   margin-top: 0px;
 `
 
-export const RegularH1 = styled.h1`
+export const RegularH1 = styled.h1<{ color?: string }>`
+  color: ${({ color, theme }) => color || theme.colors.font};
   font-size: 3rem;
   font-weight: 300;
   line-height: 150%;
 `
 
 export const StyledH2 = styled.h2`
-  /* color: #f1f8e9; */
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;

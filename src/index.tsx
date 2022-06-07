@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App'
 // import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { StoreProvider } from './utils'
@@ -8,7 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <StoreProvider>
-      <div
+      <App />
+      {/* <div
         style={{
           width: '100%',
           height: '100vh',
@@ -24,7 +26,7 @@ root.render(
       >
         <div>WIP🚧</div>
         <div>施工中🚧</div>
-      </div>
+      </div> */}
     </StoreProvider>
   </React.StrictMode>
 )

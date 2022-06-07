@@ -31,13 +31,13 @@ const StyledIconLink = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: #ef43a1;
     transition: all 600ms cubic-bezier(0.99, 0, 0.57, 0.94);
     transform: rotate(360deg);
   }
 
   svg {
-    color: #f5db3b;
+    /* color: #f5db3b; */
+    color: #ffba1f;
   }
 `
 

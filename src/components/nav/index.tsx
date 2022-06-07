@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { SiAboutdotme } from 'react-icons/si'
 import { GrContactInfo } from 'react-icons/gr'
 import { BiCollection, BiHomeSmile } from 'react-icons/bi'
+import { AppTheme } from '../../styles'
 
 export const Navigation: React.FC = () => {
   return (
@@ -80,25 +81,25 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
 const Tabs = [
   {
     label: 'home',
-    color: '#FFC93C',
+    color: AppTheme.colors['bg-home'],
     path: '',
     icon: <BiHomeSmile />,
   },
   {
     label: 'about',
-    color: '#DCFCE7',
+    color: AppTheme.colors['bg-about'],
     path: 'about',
     icon: <SiAboutdotme />,
   },
   {
     label: 'projects',
-    color: '#EF4444',
+    color: AppTheme.colors['bg-projects'],
     path: 'projects',
     icon: <BiCollection />,
   },
   {
     label: 'contact',
-    color: '#0284C7',
+    color: AppTheme.colors['bg-contact'],
     path: 'contact',
     icon: <GrContactInfo />,
   },

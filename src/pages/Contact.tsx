@@ -8,22 +8,23 @@ import {
   FaLinkedinIn,
 } from 'react-icons/fa'
 import { IconLink, PageContainer, RegularH1, TextLink } from '../components'
+import { AppTheme } from '../styles'
 
 export const Contact: React.VFC = () => {
   return (
-    <PageContainer index={3} background='#0284C7'>
+    <PageContainer index={3} background={AppTheme.colors['bg-contact']}>
       <Img url='https://lh3.googleusercontent.com/fVj7DhChjs7SN1-23-u7TDarNT2hP9m7GWb6LQM_-55HjJhIU_ZyQSdYYfg7oVGJnmH0QnIQfEfedcOq__YUjAYJvrmE--CgqCp48Z6gvUwQV0uxTcjcB3YGlHFfpJKrWP8YWDu_fg=w2400' />
-      <RegularH1>Let&apos;s talk!</RegularH1>
+      <RegularH1 color={AppTheme.colors['font-light']}>
+        Let&apos;s talk!
+      </RegularH1>
 
-      <StyledEmail>
-        <TextLink
-          href='mailto:jiang.chuxiao@gmail.com'
-          target='_blank'
-          rel='noreferrer'
-        >
-          jiang.chuxiao@gmail.com
-        </TextLink>
-      </StyledEmail>
+      <TextLink
+        href='mailto:jiang.chuxiao@gmail.com'
+        target='_blank'
+        rel='noreferrer'
+      >
+        jiang.chuxiao@gmail.com
+      </TextLink>
 
       <SubTitle>Or find me on:</SubTitle>
       <ContactPanel>
@@ -55,9 +56,8 @@ export const Contact: React.VFC = () => {
 
 const SubTitle = styled.div`
   font-size: 2rem;
-  color: #f1f8e9;
-  text-shadow: 1px 1px #cddc39;
-  font-weight: 500;
+  color: ${({ theme }) => theme.colors['font-light']};
+  font-weight: 300;
   letter-spacing: 0;
   margin-bottom: 2rem;
 `
@@ -65,17 +65,9 @@ const SubTitle = styled.div`
 const ContactPanel = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
   width: 100%;
-`
-
-const StyledEmail = styled.div`
-  /* text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 3rem;
-  font-weight: 400;
-  color: #f1f8e9; */
 `
 
 const Img = styled.div<{ url: string }>`

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode } from 'react'
+import React, { PropsWithChildren } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 interface PageContainerProps extends PropsWithChildren<unknown> {
@@ -14,8 +14,10 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   children,
 }) => {
   return (
-    <Page index={index} background={background}>
-      <Main fullHeight={fullHeight}>{children}</Main>
+    <Page index={index} background={background} className='page-container'>
+      <Main fullHeight={fullHeight} className='main-content'>
+        {children}
+      </Main>
     </Page>
   )
 }
@@ -51,7 +53,9 @@ const Page = styled.div<{ index: number; background: string }>`
   }
 `
 
-export const Main = styled.div<{ fullHeight: boolean }>`
+export const Main = styled.div<{
+  fullHeight: boolean
+}>`
   width: 100%;
   height: ${({ fullHeight }) => (fullHeight ? '100%' : 'auto')};
   padding: 5rem;

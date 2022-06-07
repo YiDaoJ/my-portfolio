@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PageContainer, ProjectPreview } from '../components'
+import { AppTheme } from '../styles'
 
 const LinksReactMovingText = [
   {
@@ -13,20 +14,13 @@ const LinksReactMovingText = [
   },
 ]
 
-// const LinksWebsites = [
-//   {
-//     title: 'Website 1',
-//     url: 'https://www.42ds.com/',
-//   },
-//   {
-//     title: 'Website 2',
-//     url: 'https://www.beyonddialog.com/',
-//   },
-// ]
-
 export const ProjectsPage: React.FC = () => {
   return (
-    <PageContainer index={2} background='#EF4444' fullHeight={false}>
+    <PageContainer
+      index={2}
+      background={AppTheme.colors['bg-projects']}
+      fullHeight={false}
+    >
       <FlexContainer>
         <ProjectPreview
           title='react-moving-text'

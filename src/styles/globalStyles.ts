@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Special Elite', cursive;
-    background-color: #263238;
+    color: ${({ theme }) => theme.colors.font};
     overflow: hidden;
 
 

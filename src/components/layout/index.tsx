@@ -14,5 +14,4 @@ export const Layout: React.FC = () => {
 
 const LayoutContainer = styled.div`
   height: 100%;
-  color: #1e293b;
 `

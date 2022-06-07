@@ -28,9 +28,9 @@ const SkillPointsContainer = styled.div`
   height: auto;
   padding: 0.8rem 1.5rem 1rem;
   border-radius: 1rem;
-  background-color: #0d9488;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  color: #dcfce7;
+  background-color: ${(props) => props.theme.colors['bg-card']};
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  color: ${(props) => props.theme.colors.font};
 
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@ const SkillPointsContainer = styled.div`
   .skill-card__divider {
     width: 100%;
     height: 2px;
-    background-color: #14b8a6;
+    background-color: ${(props) => props.theme.colors['bg-card-divider']};
     border-radius: 0.5rem;
     margin: 0.5rem 0 1rem;
   }
