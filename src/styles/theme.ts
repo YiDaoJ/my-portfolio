@@ -1,5 +1,12 @@
 import { DefaultTheme } from 'styled-components'
 
+const sizes = {
+  mobile: '425px',
+  tablet: '768px',
+  laptop_s: '1024px',
+  laptop_l: '1440px',
+}
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
@@ -12,6 +19,12 @@ declare module 'styled-components' {
       'bg-card': string
       'bg-card-divider': string
       nav: string
+    }
+    breakpoints: {
+      mobile: string
+      tablet: string
+      laptop_s: string
+      laptop_l: string
     }
   }
 }
@@ -27,5 +40,11 @@ export const AppTheme: DefaultTheme = {
     'bg-card': '#b1e179',
     'bg-card-divider': '#dfe7d2',
     nav: '#212121',
+  },
+  breakpoints: {
+    mobile: sizes.mobile,
+    tablet: sizes.tablet,
+    laptop_s: sizes.laptop_s,
+    laptop_l: sizes.laptop_l,
   },
 }

@@ -68,6 +68,14 @@ export const Main = styled.div<{
   font-family: 'Montserrat', sans-serif;
   opacity: 0;
   animation: ${fadeIn} 0.5s ease 1 1s forwards;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+    padding: 2rem;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    padding: 1rem;
+  }
 `
 
 export default PageContainer

@@ -15,12 +15,29 @@ export const RegularH1 = styled.h1<{ color?: string }>`
   font-size: 3rem;
   font-weight: 300;
   line-height: 150%;
+  margin: 2rem 0;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+  }
 `
 
 export const StyledH2 = styled.h2`
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;
+  margin: 0;
+
+  &.h2-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    font-size: 1.3rem;
+  }
 `
 
 const swing = keyframes`

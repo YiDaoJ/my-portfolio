@@ -5,46 +5,34 @@ import { AppTheme } from '../styles'
 
 export const About: React.FC = () => {
   return (
-    <PageContainer
-      index={1}
-      background={AppTheme.colors['bg-about']}
-      fullHeight={false}
-    >
+    <PageContainer index={1} background={AppTheme.colors['bg-about']} fullHeight={false}>
       <Sections>
         <div className='about-section'>
           <RegularH1>Intro.</RegularH1>
-          <StyledH2>
-            <p>Hi, my name ist Chuxiao Jiang. </p>
-            <p>
-              I am a front-end developer with 4+ years of experience in web
-              development, based in Duesseldorf. At the moment, I specialize in
-              building web applications written in React, Typescript, and
-              Node.js.
-            </p>
-            <p>
-              I enjoy bringing UI and UX concepts to reality and am passionate
-              about clean and efficient code. My aim is to dive deeper into web
-              development, and keep curiosity for new techs as well. So in my
-              spare time, I learn new techs through online courses besides
-              enhancing current skills.
-            </p>
+          <StyledH2 className='h2-flex'>
+            <div>Hi, my name ist Chuxiao Jiang. </div>
+            <div>
+              I am a front-end developer with 4+ years of experience in web development, based in
+              Duesseldorf. At the moment, I specialize in building web applications written in
+              React, Typescript, and Node.js.
+            </div>
+            <div>
+              I enjoy bringing UI and UX concepts to reality and am passionate about clean and
+              efficient code. My aim is to dive deeper into web development, and keep curiosity for
+              new techs as well. So in my spare time, I learn new techs through online courses
+              besides enhancing current skills.
+            </div>
           </StyledH2>
         </div>
         <div className='about-section'>
           <RegularH1>Skills.</RegularH1>
           <SkillPointsContainer className='skills'>
-            <SkillCard
-              title='5+ years experience'
-              skills={['HTML', 'CSS', 'Javascript']}
-            />
+            <SkillCard title='5+ years experience' skills={['HTML', 'CSS', 'Javascript']} />
             <SkillCard
               title='3+ years experience'
               skills={['React', 'Typescript', 'NodeJS', 'Git']}
             />
-            <SkillCard
-              title='1+ years experience'
-              skills={['SASS', 'jQuery']}
-            />
+            <SkillCard title='1+ years experience' skills={['SASS', 'jQuery']} />
             <SkillCard
               title='Basic knowledge'
               skills={['Java', 'SQL', 'GraphQL', 'Docker', 'Kubernetes']}
@@ -65,6 +53,14 @@ const SkillPointsContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
   box-sizing: border-box;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    width: 100%;
+  }
 `
 
 const Sections = styled.div`
@@ -73,6 +69,10 @@ const Sections = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 4rem;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    gap: 3rem;
+  }
 
   .about-section {
     width: 80%;
