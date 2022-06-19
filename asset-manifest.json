@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "https://yidaoyidao.cc/static/js/main.94843220.js",
+    "main.js": "https://yidaoyidao.cc/static/js/main.da66dc20.js",
     "static/js/787.128fc6e9.chunk.js": "https://yidaoyidao.cc/static/js/787.128fc6e9.chunk.js",
     "index.html": "https://yidaoyidao.cc/index.html",
-    "main.94843220.js.map": "https://yidaoyidao.cc/static/js/main.94843220.js.map",
+    "main.da66dc20.js.map": "https://yidaoyidao.cc/static/js/main.da66dc20.js.map",
     "787.128fc6e9.chunk.js.map": "https://yidaoyidao.cc/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.94843220.js"
+    "static/js/main.da66dc20.js"
   ]
 }
