@@ -1,11 +1,18 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
-interface TextLinkProps {
+interface TextLinkStyleProps {
+  color?: string
+  underlineColor?: string
+  size?: string
+}
+
+interface TextLinkProps extends TextLinkStyleProps {
   children: string | ReactNode
   href: string
   target?: string
   rel?: string
+  className?: string
 }
 
 export const TextLink: React.FC<TextLinkProps> = ({
@@ -13,64 +20,49 @@ export const TextLink: React.FC<TextLinkProps> = ({
   href,
   target = '_blank',
   rel,
+  className,
+  color,
+  underlineColor,
+  size,
 }) => (
-  <StyledTextLink href={href} target={target} rel={rel}>
+  <StyledTextLink
+    href={href}
+    target={target}
+    rel={rel}
+    color={color}
+    underlineColor={underlineColor}
+    size={size}
+    className={className}
+  >
     {children}
   </StyledTextLink>
 )
 
-export const StyledTextLink = styled.a`
+export const StyledTextLink = styled.a<TextLinkStyleProps>`
   display: inline-block;
   position: relative;
-  color: #343434;
   text-decoration: none;
-  padding: 0 6px;
-  &:before,
+  margin: 0 6px;
+  padding-bottom: 4px;
+  color: ${(props) => props.color || props.theme.colors.font};
+  font-size: ${(props) => props.size};
+
   &:after {
-    will-change: transform;
     content: '';
-    display: block;
     position: absolute;
-    z-index: -1;
-  }
-  &:before {
-    transition: 100ms ease-out 50ms;
-    transform-origin: 0 24px;
-    top: 0;
+    bottom: 0;
     left: 0;
+    right: 0;
+    height: 2px;
     width: 100%;
-    height: 100%;
-    border-radius: 2px;
-    background: #f87171;
-  }
-  &:after {
-    transition: 50ms ease-out;
     transform: scaleX(0);
-    transform-origin: left center;
-    bottom: -9px;
-    right: -12px;
-    border: 8px solid transparent;
-    border-left-color: #ef4444;
+    transition: transform 0.3s;
+    background-color: ${(props) => props.underlineColor || props.color || props.theme.colors.font};
   }
+
   &:hover {
-    &:before {
-      transition: 100ms ease-out;
-      transform: scaleY(0.18);
-      background: #ef4444;
-    }
     &:after {
-      transition: 50ms ease-out 100ms;
-      transform: none;
+      transform: scaleX(1);
     }
   }
-  /* &:active {
-    &:before {
-      transition: 100ms ease-in;
-      background: mix(#f1f1f1, #0077ff, 40%);
-    }
-    &:after {
-      transition: 100ms ease-in;
-      border-left-color: mix(#f1f1f1, #0077ff, 40%);
-    }
-  } */
 `

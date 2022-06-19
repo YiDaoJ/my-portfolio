@@ -51,6 +51,13 @@ const Page = styled.div<{ index: number; background: string }>`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    height: calc(100% - 200px);
+    margin-left: 0;
+    top: ${({ index }) => (index + 1) * 50}px;
+    width: 100%;
+  }
 `
 
 export const Main = styled.div<{

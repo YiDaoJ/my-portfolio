@@ -9,7 +9,7 @@ interface SkillCardProps {
 
 export const SkillCard: React.FC<SkillCardProps> = ({ title, skills }) => {
   return (
-    <SkillPointsContainer>
+    <SkillPointsContainer className='skill-card'>
       <div className='skill-card__title'>{title}</div>
       <div className='skill-card__divider' />
       <div className='skill-card__content'>
@@ -42,6 +42,11 @@ const SkillPointsContainer = styled.div`
   .skill-card__title {
     font-size: 1.3rem;
     font-weight: 500;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
   }
 
   .skill-card__divider {
@@ -57,8 +62,14 @@ const SkillPointsContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     font-size: 1.2rem;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+      gap: 1rem;
+      font-size: 1rem;
+    }
   }
 `
 

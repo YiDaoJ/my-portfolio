@@ -26,7 +26,6 @@ export const ProjectPreview: React.VFC<ProjectPreviewProps> = ({
             {links?.map((link) => (
               <TextLink href={link.url} target='_blank' key={link.title}>
                 <span>{link.title}</span>
-                {/* <BiLinkExternal /> */}
               </TextLink>
             ))}
           </div>
@@ -54,6 +53,22 @@ const Img = styled.div<{ url: string }>`
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 8px;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    width: 300px;
+    height: 240px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+    width: 300px;
+    height: 240px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 300px;
+    height: 180px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const Content = styled.div`
@@ -69,6 +84,22 @@ const Content = styled.div`
   border-radius: 8px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    position: relative;
+    width: 90%;
+    height: auto;
+    background-color: #fcd34d;
+    padding: 1.5rem 1rem 1rem;
+    color: #18181b;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    left: 0;
+    top: 0;
+    transform: none;
+    margin-top: -1rem;
+    z-index: -1;
+  }
+
   .project-preview__title {
     font-size: 1.5rem;
     font-weight: 500;
@@ -76,12 +107,21 @@ const Content = styled.div`
     display: flex;
     align-items: flex-end;
     padding-bottom: 1rem;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+      font-size: 1.3rem;
+    }
   }
 
   .project-preview__description {
     font-size: 1.1rem;
     line-height: 150%;
     white-space: pre-wrap;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+      font-size: 1rem;
+      line-height: 150%;
+    }
 
     p {
       margin: 0;

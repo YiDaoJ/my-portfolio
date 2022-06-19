@@ -10,7 +10,12 @@ export const Navigation: React.FC = () => {
   return (
     <Nav className='navigation'>
       {Tabs.map((tab) => (
-        <NavigationLink to={`/${tab.path}`} key={tab.label} color={tab.color}>
+        <NavigationLink
+          to={`/${tab.path}`}
+          key={tab.label}
+          color={tab.color}
+          className={`navigation-link__${tab.label}`}
+        >
           <span className='nav-icon'>{tab.icon}</span>
           <span className='nav-text'>{tab.label}</span>
         </NavigationLink>
@@ -25,8 +30,11 @@ const Nav = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  display: -ms-flexbox;
   display: flex;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: column;
+  }
 `
 
 const NavigationLink = styled(NavLink)<{ color: string }>`
@@ -51,6 +59,25 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
   text-decoration: none;
   color: #212121;
 
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px 30px;
+    font-family: apercu mono, sans-serif;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15rem;
+
+    &.active {
+      height: 100%;
+    }
+  }
+
   &.active {
     width: 100%;
   }
@@ -69,12 +96,22 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
       transition: all 600ms cubic-bezier(0.99, 0, 0.57, 0.94);
       transform: rotate(360deg);
     }
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      font-size: 1.5rem;
+    }
   }
 
   span.nav-text {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     text-transform: capitalize;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      text-transform: capitalize;
+    }
   }
 `
 

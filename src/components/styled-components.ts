@@ -21,6 +21,12 @@ export const RegularH1 = styled.h1<{ color?: string }>`
     font-size: 2.2rem;
     margin: 1rem 0;
   }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
 `
 
 export const StyledH2 = styled.h2`
@@ -37,6 +43,10 @@ export const StyledH2 = styled.h2`
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
     font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.1rem;
   }
 `
 

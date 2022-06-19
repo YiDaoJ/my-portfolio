@@ -7,11 +7,7 @@ interface IconLinkProps {
   title?: string
 }
 
-export const IconLink: React.FC<IconLinkProps> = ({
-  children,
-  linkURL,
-  title,
-}) => {
+export const IconLink: React.FC<IconLinkProps> = ({ children, linkURL, title }) => {
   return (
     <StyledIconLink href={linkURL} target='_blank' title={title}>
       {children}
@@ -23,12 +19,14 @@ const StyledIconLink = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* width: 50px;
-  height: 50px; */
   border-radius: 50%;
   font-size: 2em;
   text-align: center;
   text-decoration: none;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.6em;
+  }
 
   &:hover {
     transition: all 600ms cubic-bezier(0.99, 0, 0.57, 0.94);

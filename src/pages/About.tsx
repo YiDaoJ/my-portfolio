@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PageContainer, SkillCard, RegularH1, StyledH2 } from '../components'
+import { PageContainer, SkillCard, RegularH1, StyledH2, TextLink } from '../components'
 import { AppTheme } from '../styles'
 
 export const About: React.FC = () => {
@@ -8,9 +8,9 @@ export const About: React.FC = () => {
     <PageContainer index={1} background={AppTheme.colors['bg-about']} fullHeight={false}>
       <Sections>
         <div className='about-section'>
-          <RegularH1>Intro.</RegularH1>
+          <RegularH1>About me</RegularH1>
           <StyledH2 className='h2-flex'>
-            <div>Hi, my name ist Chuxiao Jiang. </div>
+            <div>Hi, my name is Chuxiao Jiang. </div>
             <div>
               I am a front-end developer with 4+ years of experience in web development, based in
               Duesseldorf. At the moment, I specialize in building web applications written in
@@ -25,7 +25,7 @@ export const About: React.FC = () => {
           </StyledH2>
         </div>
         <div className='about-section'>
-          <RegularH1>Skills.</RegularH1>
+          <RegularH1>Skills</RegularH1>
           <SkillPointsContainer className='skills'>
             <SkillCard title='5+ years experience' skills={['HTML', 'CSS', 'Javascript']} />
             <SkillCard
@@ -41,6 +41,14 @@ export const About: React.FC = () => {
         </div>
         <div className='about-section'>
           <RegularH1>Online Courses Certificates</RegularH1>
+          <div className='about-section__links-container'>
+            <TextLink href=''>
+              <span>Kubernetes for the Absolute Beginners</span>
+            </TextLink>
+            <TextLink href='../../public/Certificate of Completion_Gatsby Master.pdf'>
+              <span>Master Gatsby</span>
+            </TextLink>
+          </div>
         </div>
       </Sections>
     </PageContainer>
@@ -82,5 +90,24 @@ const Sections = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .about-section__links-container {
+      font-size: 1.3rem;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        text-align: center;
+      }
+
+      @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        font-size: 1.1rem;
+        font-weight: 400;
+      }
+    }
   }
 `

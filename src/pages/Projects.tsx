@@ -16,20 +16,13 @@ const LinksReactMovingText = [
 
 export const ProjectsPage: React.FC = () => {
   return (
-    <PageContainer
-      index={2}
-      background={AppTheme.colors['bg-projects']}
-      fullHeight={false}
-    >
+    <PageContainer index={2} background={AppTheme.colors['bg-projects']} fullHeight={false}>
       <FlexContainer>
         <ProjectPreview
           title='react-moving-text'
           description={
             <>
-              <p>
-                A library to make animated typography for web-applications built
-                with react.
-              </p>
+              <p>A library to make animated typography for web-applications built with react.</p>
               <p>The lib is implemented with React and CSS-Animation.</p>
               <p className='paragraph_with_space'>Other used techs: webpack</p>
             </>
@@ -49,7 +42,7 @@ const FlexContainer = styled.div`
   flex-direction: column;
   gap: 4rem;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 `
 
 export default ProjectsPage
