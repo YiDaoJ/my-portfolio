@@ -61,9 +61,9 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     position: relative;
-    height: 50px;
+    height: 45px;
     width: 100%;
-    min-height: 50px;
+    min-height: 45px;
     padding: 15px 30px;
     font-family: apercu mono, sans-serif;
 

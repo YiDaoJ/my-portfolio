@@ -53,9 +53,9 @@ const Page = styled.div<{ index: number; background: string }>`
   }
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    height: calc(100% - 200px);
+    height: calc(100% - 180px);
     margin-left: 0;
-    top: ${({ index }) => (index + 1) * 50}px;
+    top: ${({ index }) => (index + 1) * 45}px;
     width: 100%;
   }
 `

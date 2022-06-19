@@ -3,17 +3,6 @@ import styled from 'styled-components'
 import { PageContainer, ProjectPreview } from '../components'
 import { AppTheme } from '../styles'
 
-const LinksReactMovingText = [
-  {
-    title: 'Source Code',
-    url: 'https://github.com/YiDaoJ/react-moving-text',
-  },
-  {
-    title: 'Demo',
-    url: 'https://yidaoj.github.io/react-moving-text/',
-  },
-]
-
 export const ProjectsPage: React.FC = () => {
   return (
     <PageContainer index={2} background={AppTheme.colors['bg-projects']} fullHeight={false}>
@@ -24,11 +13,73 @@ export const ProjectsPage: React.FC = () => {
             <>
               <p>A library to make animated typography for web-applications built with react.</p>
               <p>The lib is implemented with React and CSS-Animation.</p>
-              <p className='paragraph_with_space'>Other used techs: webpack</p>
+              <p className='paragraph_with_space'>Other techs: webpack</p>
             </>
           }
-          image='https://s2.loli.net/2022/04/19/BzroIbfMD4nYSwC.png'
+          image='https://i.postimg.cc/m2dBhWys/img-react-moving-text.png'
           links={LinksReactMovingText}
+        />
+        <ProjectPreview
+          title={`Slick's Slices`}
+          description={
+            <>
+              <p>WesBos Course: Gatsby Master</p>
+              <p>
+                A website for a local pizza joint called Slick's Slices, built with React.js
+                framework Gatsby.
+              </p>
+              <p className='paragraph_with_space'>
+                Other techs: GraphQL, HeadlessCMS Sanity, Progressive Images
+              </p>
+            </>
+          }
+          image='https://res.cloudinary.com/wesbos/image/fetch/w_700,q_auto,f_auto/https://courses.wesbos.com/images/GAT/GAT-social-share.png'
+          links={LinksGatsby}
+        />
+        <ProjectPreview
+          title='Static Websites'
+          description={
+            <>
+              <p>
+                Static Websites for companies, built with React.js, Typescript and Headless CMS,
+                whose data source from a REST API.
+              </p>
+              <p className='paragraph_with_space'>
+                Other functions: subscription, mailing, responsive design, dark mode, etc.
+              </p>
+            </>
+          }
+          image='https://venturebeat.com/wp-content/uploads/2019/12/GettyImages-1156274375.jpg?fit=750%2C631&strip=all'
+        />
+        <ProjectPreview
+          title='Effizienz-Netzwerk der Stadtwerke'
+          description={
+            <>
+              <p>
+                Static Websites for companies, built with React.js, Typescript and Headless CMS,
+                whose data source from a REST API.
+              </p>
+              <p className='paragraph_with_space'>
+                Other functions: subscription, mailing, responsive design, dark mode, etc.
+              </p>
+            </>
+          }
+          image='https://venturebeat.com/wp-content/uploads/2019/12/GettyImages-1156274375.jpg?fit=750%2C631&strip=all'
+        />
+        <ProjectPreview
+          title='Realtime Messaging Web-App'
+          description={
+            <>
+              <p>
+                Static Websites for companies, built with React.js, Typescript and Headless CMS,
+                whose data source from a REST API.
+              </p>
+              <p className='paragraph_with_space'>
+                Other functions: subscription, mailing, responsive design, dark mode, etc.
+              </p>
+            </>
+          }
+          image='https://venturebeat.com/wp-content/uploads/2019/12/GettyImages-1156274375.jpg?fit=750%2C631&strip=all'
         />
       </FlexContainer>
     </PageContainer>
@@ -42,7 +93,29 @@ const FlexContainer = styled.div`
   flex-direction: column;
   gap: 4rem;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    align-items: center;
+  }
 `
+
+const LinksReactMovingText = [
+  {
+    title: 'Source Code',
+    url: 'https://github.com/YiDaoJ/react-moving-text',
+  },
+  {
+    title: 'Demo',
+    url: 'https://yidaoj.github.io/react-moving-text/',
+  },
+]
+
+const LinksGatsby = [
+  {
+    title: 'Source Code',
+    url: 'https://github.com/YiDaoJ/slicks-slices',
+  },
+]
 
 export default ProjectsPage

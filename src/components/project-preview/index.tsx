@@ -41,7 +41,7 @@ const PreviewContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 `
 
@@ -55,12 +55,12 @@ const Img = styled.div<{ url: string }>`
   border-radius: 8px;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
-    width: 300px;
+    width: 350px;
     height: 240px;
   }
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
-    width: 300px;
+    width: 350px;
     height: 240px;
   }
 
@@ -84,7 +84,7 @@ const Content = styled.div`
   border-radius: 8px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     position: relative;
     width: 90%;
     height: auto;
