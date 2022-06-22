@@ -4,13 +4,24 @@ import { FaGithubAlt, FaCodepen, FaFacebookSquare, FaBloggerB, FaLinkedinIn } fr
 import { IconLink, PageContainer, RegularH1, TextLink } from '../components'
 import { AppTheme } from '../styles'
 
-export const Contact: React.VFC = () => {
+export const Contact: React.FC = () => {
   return (
-    <PageContainer index={3} background={AppTheme.colors['bg-contact']}>
+    <PageContainer
+      index={3}
+      background={AppTheme.colors['bg-contact']}
+      fullHeight={false}
+      gap='2rem'
+    >
       <Img url='https://lh3.googleusercontent.com/fVj7DhChjs7SN1-23-u7TDarNT2hP9m7GWb6LQM_-55HjJhIU_ZyQSdYYfg7oVGJnmH0QnIQfEfedcOq__YUjAYJvrmE--CgqCp48Z6gvUwQV0uxTcjcB3YGlHFfpJKrWP8YWDu_fg=w2400' />
 
       <FlexContainer>
-        <RegularH1 color={AppTheme.colors['font-light']}>Let&apos;s talk!</RegularH1>
+        <TextLink href='../../public/lebenslauf-chuxiao.jiang' className='link__cv' color='#ffba1f'>
+          Download CV
+        </TextLink>
+      </FlexContainer>
+
+      <FlexContainer>
+        <Title color={AppTheme.colors['font-light']}>Let&apos;s talk!</Title>
 
         <TextLink
           href='mailto:jiang.chuxiao@gmail.com'
@@ -47,11 +58,30 @@ export const Contact: React.VFC = () => {
   )
 }
 
+export const Title: any = styled(RegularH1)`
+  color: ${({ color, theme }) => color || theme.colors.font};
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 150%;
+  margin: 0;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+`
+
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-bottom: 2rem;
@@ -59,9 +89,10 @@ const FlexContainer = styled.div`
 
   h1 {
     margin-bottom: 1rem;
-  }
+  } */
 
-  .link__email {
+  .link__email,
+  .link__cv {
     font-size: 1.5rem;
     font-weight: 500;
 
@@ -104,7 +135,7 @@ const Img = styled.div<{ url: string }>`
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: red;
+  background-color: #ffba1f;
 
   -webkit-clip-path: polygon(
     50% 0%,

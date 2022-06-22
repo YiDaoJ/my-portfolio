@@ -5,6 +5,7 @@ interface PageContainerProps extends PropsWithChildren<unknown> {
   index: number
   background: string
   fullHeight?: boolean
+  gap?: string
 }
 
 export const PageContainer: React.FC<PageContainerProps> = ({
@@ -12,10 +13,11 @@ export const PageContainer: React.FC<PageContainerProps> = ({
   fullHeight = true,
   background,
   children,
+  gap,
 }) => {
   return (
     <Page index={index} background={background} className='page-container'>
-      <Main fullHeight={fullHeight} className='main-content'>
+      <Main fullHeight={fullHeight} gap={gap} className='main-content'>
         {children}
       </Main>
     </Page>
@@ -42,7 +44,7 @@ const Page = styled.div<{ index: number; background: string }>`
   background-color: ${({ background }) => background};
   opacity: 0;
   visibility: hidden;
-  animation: ${fadeIn} 0.5s ease 1 0.5s forwards;
+  animation: ${fadeIn} 0.3s ease 1 0.4s forwards;
   top: 0;
 
   overflow-y: scroll;
@@ -62,8 +64,10 @@ const Page = styled.div<{ index: number; background: string }>`
 
 export const Main = styled.div<{
   fullHeight: boolean
+  gap?: string
 }>`
   width: 100%;
+  min-height: 100%;
   height: ${({ fullHeight }) => (fullHeight ? '100%' : 'auto')};
   padding: 5rem;
 
@@ -71,10 +75,11 @@ export const Main = styled.div<{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: ${({ gap }) => gap};
 
   font-family: 'Montserrat', sans-serif;
   opacity: 0;
-  animation: ${fadeIn} 0.5s ease 1 1s forwards;
+  animation: ${fadeIn} 0.3s ease 1 0.6s forwards;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
     padding: 2rem;

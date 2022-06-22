@@ -56,11 +56,16 @@ export const ProjectsPage: React.FC = () => {
           description={
             <>
               <p>
-                Static Websites for companies, built with React.js, Typescript and Headless CMS,
-                whose data source from a REST API.
+                Multi Web-Apps for municipal utilities, such as Cross-Selling-Applikation to offer
+                products and services to private customers (end users), and evaluator-app to help
+                their customers to have a solar system with which they can supply themselves, and so
+                on.
               </p>
-              <p className='paragraph_with_space'>
-                Other functions: subscription, mailing, responsive design, dark mode, etc.
+              <br />
+              <p>
+                Individualization and customization of these Web-Apps can be realised through
+                various tools at its disposal to adapt content and appearance to its CI and product
+                portfolio.
               </p>
             </>
           }
@@ -69,15 +74,11 @@ export const ProjectsPage: React.FC = () => {
         <ProjectPreview
           title='Realtime Messaging Web-App'
           description={
-            <>
-              <p>
-                Static Websites for companies, built with React.js, Typescript and Headless CMS,
-                whose data source from a REST API.
-              </p>
-              <p className='paragraph_with_space'>
-                Other functions: subscription, mailing, responsive design, dark mode, etc.
-              </p>
-            </>
+            <p>
+              Realtime Messaging Web-App for agent-user to kommunicate with customers using mobile
+              messaging apps. The Web-App is built with React.js, Typescript and runs in
+              Microfrontend architechture and event-driven APIs.
+            </p>
           }
           image='https://venturebeat.com/wp-content/uploads/2019/12/GettyImages-1156274375.jpg?fit=750%2C631&strip=all'
         />

@@ -32,7 +32,7 @@ export const About: React.FC = () => {
               title='3+ years experience'
               skills={['React', 'Typescript', 'NodeJS', 'Git']}
             />
-            <SkillCard title='1+ years experience' skills={['SASS', 'jQuery']} />
+            <SkillCard title='1+ years experience' skills={['Sass', 'jQuery']} />
             <SkillCard
               title='Basic knowledge'
               skills={['Java', 'SQL', 'GraphQL', 'Docker', 'Kubernetes']}
@@ -45,7 +45,7 @@ export const About: React.FC = () => {
             <TextLink href=''>
               <span>Kubernetes for the Absolute Beginners</span>
             </TextLink>
-            <TextLink href='../../public/Certificate of Completion_Gatsby Master.pdf'>
+            <TextLink href='../../public/certificate-gatsby.pdf'>
               <span>Master Gatsby</span>
             </TextLink>
           </div>

@@ -76,16 +76,3 @@ const swing = keyframes`
     transform-origin: center top;
   }
 `
-
-export const StyledLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-
-  &:hover {
-    animation: ${swing} 0.8s ease-in-out 1;
-  }
-`
