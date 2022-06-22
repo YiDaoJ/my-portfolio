@@ -45,7 +45,7 @@ export const About: React.FC = () => {
             <TextLink href=''>
               <span>Kubernetes for the Absolute Beginners</span>
             </TextLink>
-            <TextLink href='../../public/certificate-gatsby.pdf'>
+            <TextLink href='certificate-gatsby.pdf'>
               <span>Master Gatsby</span>
             </TextLink>
           </div>

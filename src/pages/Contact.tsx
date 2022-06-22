@@ -15,7 +15,12 @@ export const Contact: React.FC = () => {
       <Img url='https://lh3.googleusercontent.com/fVj7DhChjs7SN1-23-u7TDarNT2hP9m7GWb6LQM_-55HjJhIU_ZyQSdYYfg7oVGJnmH0QnIQfEfedcOq__YUjAYJvrmE--CgqCp48Z6gvUwQV0uxTcjcB3YGlHFfpJKrWP8YWDu_fg=w2400' />
 
       <FlexContainer>
-        <TextLink href='../../public/lebenslauf-chuxiao.jiang' className='link__cv' color='#ffba1f'>
+        <TextLink
+          href='lebenslauf-chuxiao.jiang.pdf'
+          className='link__cv'
+          color='#ffba1f'
+          target='_blank'
+        >
           Download CV
         </TextLink>
       </FlexContainer>
