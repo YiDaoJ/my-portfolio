@@ -51,8 +51,10 @@ const Img = styled.div<{ url: string }>`
   /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 12px rgba(0, 0, 0, 0.2); */
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 8px;
+  background-size: cover;
+  background-color: white;
+  background-position: center;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
     width: 350px;

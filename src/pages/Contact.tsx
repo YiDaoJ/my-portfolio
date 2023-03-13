@@ -14,7 +14,7 @@ export const Contact: React.FC = () => {
     >
       <Img url='https://lh3.googleusercontent.com/fVj7DhChjs7SN1-23-u7TDarNT2hP9m7GWb6LQM_-55HjJhIU_ZyQSdYYfg7oVGJnmH0QnIQfEfedcOq__YUjAYJvrmE--CgqCp48Z6gvUwQV0uxTcjcB3YGlHFfpJKrWP8YWDu_fg=w2400' />
 
-      <FlexContainer>
+      {/* <FlexContainer>
         <TextLink
           href='lebenslauf-chuxiao.jiang.pdf'
           className='link__cv'
@@ -23,7 +23,7 @@ export const Contact: React.FC = () => {
         >
           Download CV
         </TextLink>
-      </FlexContainer>
+      </FlexContainer> */}
 
       <FlexContainer>
         <Title color={AppTheme.colors['font-light']}>Let&apos;s talk!</Title>
@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
           <IconLink linkURL='https://www.facebook.com/chuxiao.jiang' title='FaceBook'>
             <FaFacebookSquare />
           </IconLink>
-          <IconLink linkURL='https://yidaoj.github.io/' title='Personal Blog'>
+          <IconLink linkURL='https://yidaoj-blog.vercel.app/' title='Personal Blog'>
             <FaBloggerB />
           </IconLink>
         </ContactPanel>

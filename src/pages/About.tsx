@@ -10,17 +10,17 @@ export const About: React.FC = () => {
         <div className='about-section'>
           <RegularH1>About me</RegularH1>
           <StyledH2 className='h2-flex'>
-            <div>Hi, my name is Chuxiao Jiang. </div>
+            <div>Hi, my name is Xiao.</div>
             <div>
-              I am a front-end developer with 4+ years of experience in web development, based in
-              Duesseldorf. At the moment, I specialize in building web applications written in
-              React, Typescript, and Node.js.
+              I am a front-end developer with over four years of experience in web development. I am
+              currently based in Duesseldorf and specialize in building web applications using
+              React.js, Vue.js and Typescript.
             </div>
             <div>
-              I enjoy bringing UI and UX concepts to reality and am passionate about clean and
-              efficient code. My aim is to dive deeper into web development, and keep curiosity for
-              new techs as well. So in my spare time, I learn new techs through online courses
-              besides enhancing current skills.
+              I enjoy bringing UI and UX concepts to functional, user-friendly websites and strive
+              to write clean and efficient code. But my passion doesn't stop here. I'm alwasys eager
+              to dive deeper into web development, and stay curious about technologies. In my spare
+              time, I learn new techs through online courses to keep my skills sharp.
             </div>
           </StyledH2>
         </div>
@@ -30,9 +30,9 @@ export const About: React.FC = () => {
             <SkillCard title='5+ years experience' skills={['HTML', 'CSS', 'Javascript']} />
             <SkillCard
               title='3+ years experience'
-              skills={['React', 'Typescript', 'NodeJS', 'Git']}
+              skills={['React.js', 'Typescript', 'Node.js', 'Sass', 'Git']}
             />
-            <SkillCard title='1+ years experience' skills={['Sass', 'jQuery']} />
+            <SkillCard title='1 year experience' skills={['Vue.js', 'jQuery']} />
             <SkillCard
               title='Basic knowledge'
               skills={['Java', 'SQL', 'GraphQL', 'Docker', 'Kubernetes']}
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
         <div className='about-section'>
           <RegularH1>Online Courses Certificates</RegularH1>
           <div className='about-section__links-container'>
-            <TextLink href=''>
+            <TextLink href='certificate-k8s.pdf'>
               <span>Kubernetes for the Absolute Beginners</span>
             </TextLink>
             <TextLink href='certificate-gatsby.pdf'>
