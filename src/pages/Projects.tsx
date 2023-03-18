@@ -13,15 +13,18 @@ export const ProjectsPage: React.FC = () => {
             <>
               <p>
                 The web application serves as online shop of a telecommunication company. The
-                application untilizes popular Javascript library Vue.js, which allows for the
+                application was developed using Javascript library Vue.js, which allows for the
                 creating of resuable UI components.
               </p>
-              <p>The application's styling was done using CSS preprocessor Sass.</p>
+              <p>The development of styling was utilized using CSS preprocessor Sass.</p>
               <p>
                 Unit tests were implemented using Jest to ensure that individual components of
                 application workes as expected.
               </p>
-              <p className='paragraph_with_space'>Other techs: State management via Vuex</p>
+              <p className='paragraph_with_space'>
+                Other techs: state-management via Vuex, displaying resuable UI components via
+                storybook
+              </p>
             </>
           }
           image='https://venturebeat.com/wp-content/uploads/2019/12/GettyImages-1156274375.jpg?fit=750%2C631&strip=all'
@@ -36,9 +39,10 @@ export const ProjectsPage: React.FC = () => {
               </p>
               <p>The blog content were written in markdown and compiled into Javascript.</p>
               <p>
-                Styling parting is implemented with Framework Tailwind CSS. The Website also follows
-                responsive design principles, adapting to different screen sizes and ensuring that
-                the content is easily accessible on a range of devices.
+                Styling parting is implemented with CSS framework Tailwind CSS. The Website also
+                follows responsive design principles and toggling between light and dark mode,
+                adapting to different screen sizes and light conditions, ensuring that the content
+                is easily accessible on a range of devices.
               </p>
             </>
           }

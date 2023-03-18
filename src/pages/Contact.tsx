@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaGithubAlt, FaCodepen, FaFacebookSquare, FaBloggerB, FaLinkedinIn } from 'react-icons/fa'
+import { FaGithubAlt, FaCodepen, FaBloggerB, FaLinkedinIn } from 'react-icons/fa'
 import { IconLink, PageContainer, RegularH1, TextLink } from '../components'
 import { AppTheme } from '../styles'
 
@@ -45,18 +45,18 @@ export const Contact: React.FC = () => {
           <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
             <FaGithubAlt />
           </IconLink>
+          <IconLink linkURL='https://yidaoj-blog.vercel.app/' title='Personal Blog'>
+            <FaBloggerB />
+          </IconLink>
           <IconLink linkURL='https://www.linkedin.com/in/chuxiao-jiang-406b0b239/' title='LinkedIn'>
             <FaLinkedinIn />
           </IconLink>
           <IconLink linkURL='http://codepen.io/yidaoJ/' title='CodePen'>
             <FaCodepen />
           </IconLink>
-          <IconLink linkURL='https://www.facebook.com/chuxiao.jiang' title='FaceBook'>
+          {/* <IconLink linkURL='https://www.facebook.com/chuxiao.jiang' title='FaceBook'>
             <FaFacebookSquare />
-          </IconLink>
-          <IconLink linkURL='https://yidaoj-blog.vercel.app/' title='Personal Blog'>
-            <FaBloggerB />
-          </IconLink>
+          </IconLink> */}
         </ContactPanel>
       </FlexContainer>
     </PageContainer>

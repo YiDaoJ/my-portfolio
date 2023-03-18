@@ -20,7 +20,8 @@ export const About: React.FC = () => {
               I enjoy bringing UI and UX concepts to functional, user-friendly websites and strive
               to write clean and efficient code. But my passion doesn't stop here. I'm alwasys eager
               to dive deeper into web development, and stay curious about technologies. In my spare
-              time, I learn new techs through online courses to keep my skills sharp.
+              time, I learn new techs through online courses to keep my skills sharp. In addition, I
+              am also very interested in cloud development and DevOps.
             </div>
           </StyledH2>
         </div>
