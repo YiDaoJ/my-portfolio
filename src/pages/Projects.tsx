@@ -42,7 +42,7 @@ export const ProjectsPage: React.FC = () => {
               </p>
             </>
           }
-          image='https://i.postimg.cc/2SZBftV0/Screenshot-2023-03-11-at-15-03-38.png'
+          image='https://i.postimg.cc/YSCwwNgg/Screenshot-2023-03-18-at-14-53-08.png'
           links={LinksBlog}
         />
         <ProjectPreview
@@ -132,10 +132,11 @@ const FlexContainer = styled.div`
   flex-direction: column;
   gap: 4rem;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     align-items: center;
+    gap: 2rem;
   }
 `
 

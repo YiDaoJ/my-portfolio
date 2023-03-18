@@ -17,101 +17,103 @@ export const ProjectPreview: React.VFC<ProjectPreviewProps> = ({
 }) => {
   return (
     <PreviewContainer>
-      <Img url={image} />
-      <Content className='project-preview__content'>
-        <div className='project-preview__title'>{title}</div>
-        <div className='project-preview__description'>{description}</div>
-        {Boolean(links) && (
-          <div className='project-preview__links'>
-            {links?.map((link) => (
-              <TextLink href={link.url} target='_blank' key={link.title}>
-                <span>{link.title}</span>
-              </TextLink>
-            ))}
-          </div>
-        )}
-      </Content>
+      <div className='space-placeholder'></div>
+
+      <ImageContainer>
+        <Img src={image} />
+      </ImageContainer>
+
+      <ContentContainer>
+        <div className=''>
+          <h3 className='project-preview__title'>{title}</h3>
+
+          <div className='project-preview__description'>{description}</div>
+        </div>
+
+        <div className='project-preview__links'>
+          {links?.map((link) => (
+            <TextLink href={link.url} target='_blank' key={link.title}>
+              <span>{link.title}</span>
+            </TextLink>
+          ))}
+        </div>
+      </ContentContainer>
     </PreviewContainer>
   )
 }
 
-const PreviewContainer = styled.div`
-  border-radius: 8px;
-  position: relative;
-
+const PreviewContainer = styled.article`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-`
+  flex-direction: row;
+  background-color: #f7c815;
+  width: 90%;
+  max-width: 1080px;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
 
-const Img = styled.div<{ url: string }>`
-  width: 500px;
-  height: 320px;
-  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 12px rgba(0, 0, 0, 0.2); */
-  background-image: url(${(props) => props.url});
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  background-size: cover;
-  background-color: white;
-  background-position: center;
+  .space-placeholder {
+    padding: 1.5rem;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
-    width: 350px;
-    height: 240px;
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+      padding: 0.75rem;
+    }
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      display: none;
+    }
   }
-
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
-    width: 350px;
-    height: 240px;
-  }
-
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 300px;
-    height: 180px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  }
-`
-
-const Content = styled.div`
-  width: 50vw;
-  height: auto;
-  background-color: #fcd34d;
-  padding: 1.5rem 2rem;
-  color: #18181b;
-  position: absolute;
-  top: 50%;
-  left: 90%;
-  transform: translateY(-50%);
-  border-radius: 8px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    position: relative;
-    width: 90%;
-    height: auto;
-    background-color: #fcd34d;
-    padding: 1.5rem 1rem 1rem;
-    color: #18181b;
-    border-radius: 8px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    left: 0;
-    top: 0;
-    transform: none;
-    margin-top: -1rem;
-    z-index: -1;
+    flex-direction: column;
+  }
+`
+
+const ImageContainer = styled.div`
+  max-width: 300px;
+  min-height: 300px;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+    max-width: 200px;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
+`
+
+const Img = styled.img<{ src: string }>`
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+    object-fit: contain;
+  }
+`
+
+const ContentContainer = styled.div`
+  padding: 0.5rem 1.5rem 1rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .project-preview__links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
   }
 
   .project-preview__title {
     font-size: 1.5rem;
     font-weight: 500;
+    margin-bottom: 0.75rem;
 
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 1rem;
-
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
-      font-size: 1.3rem;
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-top: 0.5rem;
     }
   }
 
@@ -120,24 +122,17 @@ const Content = styled.div`
     line-height: 150%;
     white-space: pre-wrap;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
-      font-size: 1rem;
-      line-height: 150%;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
     p {
       margin: 0;
+      padding: 0;
     }
 
     .paragraph_with_space {
       margin-top: 1rem;
     }
-  }
-
-  .project-preview__links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 12px;
   }
 `

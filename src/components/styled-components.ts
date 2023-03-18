@@ -16,6 +16,7 @@ export const RegularH1 = styled.h1<{ color?: string }>`
   font-weight: 300;
   line-height: 150%;
   margin: 2rem 0;
+  text-align: center;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
     font-size: 2.2rem;
@@ -29,7 +30,8 @@ export const RegularH1 = styled.h1<{ color?: string }>`
   }
 `
 
-export const StyledH2 = styled.h2`
+export const StyledH2 = styled.h2<{ color?: string }>`
+  color: ${({ color, theme }) => color || theme.colors.font};
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 150%;

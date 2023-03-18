@@ -18,7 +18,7 @@ export const Contact: React.FC = () => {
         <TextLink
           href='lebenslauf-chuxiao.jiang.pdf'
           className='link__cv'
-          color='#ffba1f'
+          color='#fcc60a'
           target='_blank'
         >
           Download CV
@@ -33,7 +33,7 @@ export const Contact: React.FC = () => {
           target='_blank'
           rel='noreferrer'
           className='link__email'
-          color='#ffba1f'
+          color='#fcc60a'
         >
           jiang.chuxiao@gmail.com
         </TextLink>
@@ -140,7 +140,7 @@ const Img = styled.div<{ url: string }>`
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ffba1f;
+  background-color: #fcc60a;
 
   -webkit-clip-path: polygon(
     50% 0%,

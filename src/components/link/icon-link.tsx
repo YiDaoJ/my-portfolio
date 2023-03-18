@@ -35,7 +35,7 @@ const StyledIconLink = styled.a`
 
   svg {
     /* color: #f5db3b; */
-    color: #ffba1f;
+    color: #fcc60a;
   }
 `
 
