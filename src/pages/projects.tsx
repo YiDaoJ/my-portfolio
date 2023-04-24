@@ -1,11 +1,15 @@
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
 import styled from "styled-components";
 
 import PageContainer from "@/components/pageContainer";
 import { ProjectPreview } from "@/components/projectPreview";
 import { AppTheme } from "@/styles/theme";
 
-const Projects: React.FC = () => {
+// type Props = {
+//   content: PortfolioData;
+// };
+
+const Projects = () => {
   return (
     <PageContainer
       index={2}

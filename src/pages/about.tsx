@@ -1,13 +1,19 @@
-import React from "react";
+import { GetStaticProps } from "next";
 import styled from "styled-components";
 
 import PageContainer from "@/components/pageContainer";
-import { RegularH1, StyledH2 } from "@/components/styledComponents";
 import SkillCard from "@/components/skillCard";
+import { RegularH1, StyledH2 } from "@/components/styledComponents";
 import { TextLink } from "@/components/textLink";
+import { PortfolioData } from "@/static/type";
 import { AppTheme } from "@/styles/theme";
+import { getLocalData } from "@/utils/getLocalData";
 
-const About: React.FC = () => {
+type Props = {
+  content: PortfolioData;
+};
+
+const About = ({ content }: Props) => {
   return (
     <PageContainer
       index={1}
@@ -16,24 +22,11 @@ const About: React.FC = () => {
     >
       <Sections>
         <div className='about-section'>
-          <RegularH1>About me</RegularH1>
+          <RegularH1>{content.about.title}</RegularH1>
           <StyledH2 className='h2-flex'>
-            <div>Hi, my name is Xiao.</div>
-            <div>
-              I am a front-end developer with over four years of experience in
-              web development. I am currently based in Duesseldorf and
-              specialize in building web applications using React.js, Vue.js and
-              Typescript.
-            </div>
-            <div>
-              I enjoy bringing UI and UX concepts to functional, user-friendly
-              websites and strive to write clean and efficient code. But my
-              passion doesn't stop here. I'm alwasys eager to dive deeper into
-              web development, and stay curious about technologies. In my spare
-              time, I learn new techs through online courses to keep my skills
-              sharp. In addition, I am also very interested in cloud development
-              and DevOps.
-            </div>
+            {content.about.introductions.map((intro: string, index: number) => (
+              <div key={index}>{intro}</div>
+            ))}
           </StyledH2>
         </div>
         <div className='about-section'>
@@ -58,7 +51,7 @@ const About: React.FC = () => {
           </SkillPointsContainer>
         </div>
         <div className='about-section'>
-          <RegularH1>Online Courses Certificates</RegularH1>
+          <RegularH1>{content.about.certification_title}</RegularH1>
           <div className='about-section__links-container'>
             <TextLink href='certificate-k8s.pdf'>
               <span>Kubernetes for the Absolute Beginners</span>
@@ -71,6 +64,16 @@ const About: React.FC = () => {
       </Sections>
     </PageContainer>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const content: PortfolioData = await getLocalData();
+
+  return {
+    props: {
+      content,
+    },
+  };
 };
 
 export default About;

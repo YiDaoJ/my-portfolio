@@ -1,0 +1,24 @@
+{
+  "home": {
+    "title": "Hi, I'm Xiao",
+    "subtitle": "Web Engineer, Front-End Addict."
+  },
+  "about": {
+    "title": "About me",
+    "introductions": [
+      "Hi, my name is Xiao.",
+      "I am a front-end developer with over four years of experience in web development. I am currently based in Duesseldorf and specialize in building web applications using React.js, Vue.js and Typescript.",
+      "I enjoy bringing UI and UX concepts to functional, user-friendly websites and strive to write clean and efficient code. But my passion doesn't stop here. I'm alwasys eager to dive deeper into web development, and stay curious about technologies. In my spare time, I learn new techs through online courses to keep my skills sharp. In addition, I am also very interested in cloud development and DevOps."
+    ],
+    "certification_title": "Online Courses Certificates"
+  },
+  "contact": {
+    "email": "jiang.chuxiao@gmail.com",
+    "title": "Let's talk!",
+    "subtitle": "Or find me on:"
+  },
+  "projects": {},
+  "common": {
+    "title": "Xiao's Portfolio"
+  }
+}

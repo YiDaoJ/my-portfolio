@@ -1,19 +1,25 @@
-import React from "react";
-import styled from "styled-components";
+import { GetStaticProps } from "next";
 import {
-  FaGithubAlt,
-  FaCodepen,
   FaBloggerB,
+  FaCodepen,
+  FaGithubAlt,
   FaLinkedinIn,
 } from "react-icons/fa";
+import styled from "styled-components";
 
-import PageContainer from "@/components/pageContainer";
-import { TextLink } from "@/components/textLink";
 import IconLink from "@/components/iconLink";
-import { AppTheme } from "@/styles/theme";
+import PageContainer from "@/components/pageContainer";
 import { RegularH1 } from "@/components/styledComponents";
+import { TextLink } from "@/components/textLink";
+import { PortfolioData } from "@/static/type";
+import { AppTheme } from "@/styles/theme";
+import { getLocalData } from "@/utils/getLocalData";
 
-const Contact: React.FC = () => {
+type Props = {
+  content: PortfolioData;
+};
+
+const Contact = ({ content }: Props) => {
   return (
     <PageContainer
       index={3}
@@ -35,21 +41,23 @@ const Contact: React.FC = () => {
       </FlexContainer> */}
 
       <FlexContainer>
-        <Title color={AppTheme.colors["font-light"]}>Let&apos;s talk!</Title>
+        <Title color={AppTheme.colors["font-light"]}>
+          {content.contact.title}
+        </Title>
 
         <TextLink
-          href='mailto:jiang.chuxiao@gmail.com'
+          href={`mailto:${content.contact.email}`}
           target='_blank'
           rel='noreferrer'
           className='link__email'
           color='#fcc60a'
         >
-          jiang.chuxiao@gmail.com
+          {content.contact.email}
         </TextLink>
       </FlexContainer>
 
       <FlexContainer>
-        <SubTitle>Or find me on:</SubTitle>
+        <SubTitle>{content.contact.subtitle}</SubTitle>
         <ContactPanel>
           <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
             <FaGithubAlt />
@@ -76,6 +84,16 @@ const Contact: React.FC = () => {
       </FlexContainer>
     </PageContainer>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const content: PortfolioData = await getLocalData();
+
+  return {
+    props: {
+      content,
+    },
+  };
 };
 
 export default Contact;
