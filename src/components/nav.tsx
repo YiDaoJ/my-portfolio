@@ -5,16 +5,23 @@ import { SiAboutdotme } from "react-icons/si";
 import { GrContactInfo } from "react-icons/gr";
 import { BiCollection, BiHomeSmile } from "react-icons/bi";
 import { AppTheme } from "@/styles/theme";
+import clsx from "clsx";
+import { useRouter } from "next/router";
 
 export const Navigation: React.FC = () => {
+  const router = useRouter();
+
   return (
     <Nav className='navigation'>
       {Tabs.map((tab) => (
         <NavigationLink
-          href={`/${tab.path}`}
+          href={tab.path}
           key={tab.label}
           color={tab.color}
-          className={`navigation-link__${tab.label}`}
+          className={clsx([
+            `navigation-link__${tab.label}`,
+            { active: router.pathname === tab.path },
+          ])}
         >
           <span className='nav-icon'>{tab.icon}</span>
           <span className='nav-text'>{tab.label}</span>
@@ -124,25 +131,25 @@ const Tabs = [
   {
     label: "home",
     color: AppTheme.colors["bg-home"],
-    path: "",
+    path: "/",
     icon: <BiHomeSmile />,
   },
   {
     label: "about",
     color: AppTheme.colors["bg-about"],
-    path: "about",
+    path: "/about",
     icon: <SiAboutdotme />,
   },
   {
     label: "projects",
     color: AppTheme.colors["bg-projects"],
-    path: "projects",
+    path: "/projects",
     icon: <BiCollection />,
   },
   {
     label: "contact",
     color: AppTheme.colors["bg-contact"],
-    path: "contact",
+    path: "/contact",
     icon: <GrContactInfo />,
   },
 ];
