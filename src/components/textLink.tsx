@@ -1,24 +1,24 @@
-import React, { ReactNode } from 'react'
-import styled from 'styled-components'
+import React, { ReactNode } from "react";
+import styled from "styled-components";
 
 interface TextLinkStyleProps {
-  color?: string
-  underlineColor?: string
-  size?: string
+  color?: string;
+  underlineColor?: string;
+  size?: string;
 }
 
 interface TextLinkProps extends TextLinkStyleProps {
-  children: string | ReactNode
-  href: string
-  target?: string
-  rel?: string
-  className?: string
+  children: string | ReactNode;
+  href: string;
+  target?: string;
+  rel?: string;
+  className?: string;
 }
 
 export const TextLink: React.FC<TextLinkProps> = ({
   children,
   href,
-  target = '_blank',
+  target = "_blank",
   rel,
   className,
   color,
@@ -36,7 +36,7 @@ export const TextLink: React.FC<TextLinkProps> = ({
   >
     {children}
   </StyledTextLink>
-)
+);
 
 export const StyledTextLink = styled.a<TextLinkStyleProps>`
   display: inline-block;
@@ -48,7 +48,7 @@ export const StyledTextLink = styled.a<TextLinkStyleProps>`
   font-size: ${(props) => props.size};
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -57,7 +57,8 @@ export const StyledTextLink = styled.a<TextLinkStyleProps>`
     width: 100%;
     transform: scaleX(0);
     transition: transform 0.3s;
-    background-color: ${(props) => props.underlineColor || props.color || props.theme.colors.font};
+    background-color: ${(props) =>
+      props.underlineColor || props.color || props.theme.colors.font};
   }
 
   &:hover {
@@ -65,4 +66,4 @@ export const StyledTextLink = styled.a<TextLinkStyleProps>`
       transform: scaleX(1);
     }
   }
-`
+`;

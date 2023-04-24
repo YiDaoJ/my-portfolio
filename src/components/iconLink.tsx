@@ -1,19 +1,23 @@
-import React, { ReactElement } from 'react'
-import styled from 'styled-components'
+import React, { ReactElement } from "react";
+import styled from "styled-components";
 
 interface IconLinkProps {
-  children: ReactElement
-  linkURL: string
-  title?: string
+  children: ReactElement;
+  linkURL: string;
+  title?: string;
 }
 
-export const IconLink: React.FC<IconLinkProps> = ({ children, linkURL, title }) => {
+export const IconLink: React.FC<IconLinkProps> = ({
+  children,
+  linkURL,
+  title,
+}) => {
   return (
     <StyledIconLink href={linkURL} target='_blank' title={title}>
       {children}
     </StyledIconLink>
-  )
-}
+  );
+};
 
 const StyledIconLink = styled.a`
   display: inline-flex;
@@ -24,7 +28,8 @@ const StyledIconLink = styled.a`
   text-align: center;
   text-decoration: none;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
     font-size: 1.6em;
   }
 
@@ -37,6 +42,6 @@ const StyledIconLink = styled.a`
     /* color: #f5db3b; */
     color: #fcc60a;
   }
-`
+`;
 
-export default IconLink
+export default IconLink;

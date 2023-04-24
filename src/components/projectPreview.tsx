@@ -1,12 +1,12 @@
-import React, { ReactNode } from 'react'
-import styled from 'styled-components'
-import { TextLink } from '../link/text-link'
+import React, { ReactNode } from "react";
+import styled from "styled-components";
+import { TextLink } from "./textLink";
 
 interface ProjectPreviewProps {
-  title: string
-  description: string | ReactNode | ReactNode[]
-  image: string
-  links?: { title: string; url: string }[]
+  title: string;
+  description: string | ReactNode | ReactNode[];
+  image: string;
+  links?: { title: string; url: string }[];
 }
 
 export const ProjectPreview: React.VFC<ProjectPreviewProps> = ({
@@ -39,8 +39,8 @@ export const ProjectPreview: React.VFC<ProjectPreviewProps> = ({
         </div>
       </ContentContainer>
     </PreviewContainer>
-  )
-}
+  );
+};
 
 const PreviewContainer = styled.article`
   display: flex;
@@ -54,32 +54,37 @@ const PreviewContainer = styled.article`
   .space-placeholder {
     padding: 1.5rem;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.laptop_l}) {
       padding: 0.75rem;
     }
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.tablet}) {
       display: none;
     }
   }
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tablet}) {
     flex-direction: column;
   }
-`
+`;
 
 const ImageContainer = styled.div`
   max-width: 300px;
   min-height: 300px;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.laptop_l}) {
     max-width: 200px;
   }
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tablet}) {
     display: none;
   }
-`
+`;
 
 const Img = styled.img<{ src: string }>`
   width: 100%;
@@ -88,10 +93,11 @@ const Img = styled.img<{ src: string }>`
   object-fit: cover;
   aspect-ratio: 1/1;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.laptop_l}) {
     object-fit: contain;
   }
-`
+`;
 
 const ContentContainer = styled.div`
   padding: 0.5rem 1.5rem 1rem;
@@ -112,7 +118,8 @@ const ContentContainer = styled.div`
     font-weight: 500;
     margin-bottom: 0.75rem;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.tablet}) {
       margin-top: 0.5rem;
     }
   }
@@ -135,4 +142,4 @@ const ContentContainer = styled.div`
       margin-top: 1rem;
     }
   }
-`
+`;

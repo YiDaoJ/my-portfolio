@@ -1,14 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
-import { FaGithubAlt, FaCodepen, FaBloggerB, FaLinkedinIn } from 'react-icons/fa'
-import { IconLink, PageContainer, RegularH1, TextLink } from '../components'
-import { AppTheme } from '../styles'
+import React from "react";
+import styled from "styled-components";
+import {
+  FaGithubAlt,
+  FaCodepen,
+  FaBloggerB,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
-export const Contact: React.FC = () => {
+import PageContainer from "@/components/pageContainer";
+import { TextLink } from "@/components/textLink";
+import IconLink from "@/components/iconLink";
+import { AppTheme } from "@/styles/theme";
+import { RegularH1 } from "@/components/styledComponents";
+
+const Contact: React.FC = () => {
   return (
     <PageContainer
       index={3}
-      background={AppTheme.colors['bg-contact']}
+      background={AppTheme.colors["bg-contact"]}
       fullHeight={false}
       gap='2rem'
     >
@@ -26,7 +35,7 @@ export const Contact: React.FC = () => {
       </FlexContainer> */}
 
       <FlexContainer>
-        <Title color={AppTheme.colors['font-light']}>Let&apos;s talk!</Title>
+        <Title color={AppTheme.colors["font-light"]}>Let&apos;s talk!</Title>
 
         <TextLink
           href='mailto:jiang.chuxiao@gmail.com'
@@ -45,10 +54,16 @@ export const Contact: React.FC = () => {
           <IconLink linkURL='https://github.com/YiDaoJ' title='Github'>
             <FaGithubAlt />
           </IconLink>
-          <IconLink linkURL='https://yidaoj-blog.vercel.app/' title='Personal Blog'>
+          <IconLink
+            linkURL='https://yidaoj-blog.vercel.app/'
+            title='Personal Blog'
+          >
             <FaBloggerB />
           </IconLink>
-          <IconLink linkURL='https://www.linkedin.com/in/chuxiao-jiang-406b0b239/' title='LinkedIn'>
+          <IconLink
+            linkURL='https://www.linkedin.com/in/chuxiao-jiang-406b0b239/'
+            title='LinkedIn'
+          >
             <FaLinkedinIn />
           </IconLink>
           <IconLink linkURL='http://codepen.io/yidaoJ/' title='CodePen'>
@@ -60,8 +75,10 @@ export const Contact: React.FC = () => {
         </ContactPanel>
       </FlexContainer>
     </PageContainer>
-  )
-}
+  );
+};
+
+export default Contact;
 
 export const Title: any = styled(RegularH1)`
   color: ${({ color, theme }) => color || theme.colors.font};
@@ -70,17 +87,19 @@ export const Title: any = styled(RegularH1)`
   line-height: 150%;
   margin: 0;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.laptop_s}) {
     font-size: 2.2rem;
     margin: 1rem 0;
   }
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
     font-size: 1.5rem;
     font-weight: 400;
     text-align: center;
   }
-`
+`;
 
 const FlexContainer = styled.div`
   display: flex;
@@ -88,7 +107,8 @@ const FlexContainer = styled.div`
   align-items: center;
   /* margin-bottom: 3rem;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) =>
+    theme.breakpoints.mobile}) {
     margin-bottom: 2rem;
   }
 
@@ -101,25 +121,27 @@ const FlexContainer = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.mobile}) {
       font-size: 1.2rem;
       font-weight: 400;
     }
   }
-`
+`;
 
 const SubTitle = styled.div`
   font-size: 2rem;
-  color: ${({ theme }) => theme.colors['font-light']};
+  color: ${({ theme }) => theme.colors["font-light"]};
   font-weight: 300;
   letter-spacing: 0;
   margin-bottom: 2rem;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
     font-size: 1.3rem;
     font-weight: 400;
   }
-`
+`;
 
 const ContactPanel = styled.div`
   display: flex;
@@ -128,10 +150,11 @@ const ContactPanel = styled.div`
   gap: 2rem;
   width: 100%;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
     gap: 1.5rem;
   }
-`
+`;
 
 const Img = styled.div<{ url: string }>`
   width: 300px;
@@ -165,10 +188,9 @@ const Img = styled.div<{ url: string }>`
     17% 12%
   );
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
     width: 200px;
     height: 200px;
   }
-`
-
-export default Contact
+`;

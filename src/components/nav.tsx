@@ -1,17 +1,17 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
-import { SiAboutdotme } from 'react-icons/si'
-import { GrContactInfo } from 'react-icons/gr'
-import { BiCollection, BiHomeSmile } from 'react-icons/bi'
-import { AppTheme } from '../../styles'
+import React from "react";
+import Link from "next/link";
+import styled from "styled-components";
+import { SiAboutdotme } from "react-icons/si";
+import { GrContactInfo } from "react-icons/gr";
+import { BiCollection, BiHomeSmile } from "react-icons/bi";
+import { AppTheme } from "@/styles/theme";
 
 export const Navigation: React.FC = () => {
   return (
     <Nav className='navigation'>
       {Tabs.map((tab) => (
         <NavigationLink
-          to={`/${tab.path}`}
+          href={`/${tab.path}`}
           key={tab.label}
           color={tab.color}
           className={`navigation-link__${tab.label}`}
@@ -21,8 +21,8 @@ export const Navigation: React.FC = () => {
         </NavigationLink>
       ))}
     </Nav>
-  )
-}
+  );
+};
 
 const Nav = styled.div`
   padding: 0;
@@ -31,13 +31,15 @@ const Nav = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: flex-end;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tablet}) {
     flex-direction: column;
   }
-`
+`;
 
-const NavigationLink = styled(NavLink)<{ color: string }>`
+const NavigationLink = styled(Link)<{ color: string }>`
   position: relative;
   height: 100%;
   width: 60px;
@@ -59,7 +61,8 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
   text-decoration: none;
   color: #212121;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tablet}) {
     position: relative;
     height: 45px;
     width: 100%;
@@ -97,7 +100,8 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
       transform: rotate(360deg);
     }
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.tablet}) {
       font-size: 1.5rem;
     }
   }
@@ -107,39 +111,40 @@ const NavigationLink = styled(NavLink)<{ color: string }>`
     text-orientation: mixed;
     text-transform: capitalize;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.tablet}) {
       writing-mode: horizontal-tb;
       text-orientation: mixed;
       text-transform: capitalize;
     }
   }
-`
+`;
 
 const Tabs = [
   {
-    label: 'home',
-    color: AppTheme.colors['bg-home'],
-    path: '',
+    label: "home",
+    color: AppTheme.colors["bg-home"],
+    path: "",
     icon: <BiHomeSmile />,
   },
   {
-    label: 'about',
-    color: AppTheme.colors['bg-about'],
-    path: 'about',
+    label: "about",
+    color: AppTheme.colors["bg-about"],
+    path: "about",
     icon: <SiAboutdotme />,
   },
   {
-    label: 'projects',
-    color: AppTheme.colors['bg-projects'],
-    path: 'projects',
+    label: "projects",
+    color: AppTheme.colors["bg-projects"],
+    path: "projects",
     icon: <BiCollection />,
   },
   {
-    label: 'contact',
-    color: AppTheme.colors['bg-contact'],
-    path: 'contact',
+    label: "contact",
+    color: AppTheme.colors["bg-contact"],
+    path: "contact",
     icon: <GrContactInfo />,
   },
-]
+];
 
-export default Navigation
+export default Navigation;

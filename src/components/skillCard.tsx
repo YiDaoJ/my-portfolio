@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 interface SkillCardProps {
-  title: string
-  skills: string[]
-  color?: string
+  title: string;
+  skills: string[];
+  color?: string;
 }
 
 export const SkillCard: React.FC<SkillCardProps> = ({ title, skills }) => {
@@ -20,15 +20,15 @@ export const SkillCard: React.FC<SkillCardProps> = ({ title, skills }) => {
         ))}
       </div>
     </SkillPointsContainer>
-  )
-}
+  );
+};
 
 const SkillPointsContainer = styled.div`
   width: 100%;
   height: auto;
   padding: 0.8rem 1.5rem 1rem;
   border-radius: 1rem;
-  background-color: ${(props) => props.theme.colors['bg-card']};
+  background-color: ${(props) => props.theme.colors["bg-card"]};
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
   color: ${(props) => props.theme.colors.font};
 
@@ -43,7 +43,8 @@ const SkillPointsContainer = styled.div`
     font-size: 1.3rem;
     font-weight: 500;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.mobile}) {
       font-size: 1.2rem;
       font-weight: 400;
     }
@@ -52,7 +53,7 @@ const SkillPointsContainer = styled.div`
   .skill-card__divider {
     width: 100%;
     height: 2px;
-    background-color: ${(props) => props.theme.colors['bg-card-divider']};
+    background-color: ${(props) => props.theme.colors["bg-card-divider"]};
     border-radius: 0.5rem;
     margin: 0.5rem 0 1rem;
   }
@@ -66,11 +67,12 @@ const SkillPointsContainer = styled.div`
     gap: 2rem;
     font-size: 1.2rem;
 
-    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.mobile}) {
       gap: 1rem;
       font-size: 1rem;
     }
   }
-`
+`;
 
-export default SkillCard
+export default SkillCard;

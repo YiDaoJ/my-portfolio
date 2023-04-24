@@ -1,11 +1,11 @@
-import React, { PropsWithChildren } from 'react'
-import styled, { keyframes } from 'styled-components'
+import React, { PropsWithChildren } from "react";
+import styled, { keyframes } from "styled-components";
 
 interface PageContainerProps extends PropsWithChildren<unknown> {
-  index: number
-  background: string
-  fullHeight?: boolean
-  gap?: string
+  index: number;
+  background: string;
+  fullHeight?: boolean;
+  gap?: string;
 }
 
 export const PageContainer: React.FC<PageContainerProps> = ({
@@ -21,8 +21,8 @@ export const PageContainer: React.FC<PageContainerProps> = ({
         {children}
       </Main>
     </Page>
-  )
-}
+  );
+};
 
 export const fadeIn = keyframes`
   from {
@@ -34,7 +34,7 @@ export const fadeIn = keyframes`
     visibility: visible;
     opacity: 1;
   }
-`
+`;
 
 const Page = styled.div<{ index: number; background: string }>`
   position: absolute;
@@ -54,21 +54,22 @@ const Page = styled.div<{ index: number; background: string }>`
     display: none;
   }
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tablet}) {
     height: calc(100% - 180px);
     margin-left: 0;
     top: ${({ index }) => (index + 1) * 45}px;
     width: 100%;
   }
-`
+`;
 
 export const Main = styled.div<{
-  fullHeight: boolean
-  gap?: string
+  fullHeight: boolean;
+  gap?: string;
 }>`
   width: 100%;
   min-height: 100%;
-  height: ${({ fullHeight }) => (fullHeight ? '100%' : 'auto')};
+  height: ${({ fullHeight }) => (fullHeight ? "100%" : "auto")};
   padding: 5rem;
 
   display: flex;
@@ -77,17 +78,19 @@ export const Main = styled.div<{
   align-items: center;
   gap: ${({ gap }) => gap};
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   opacity: 0;
   animation: ${fadeIn} 0.3s ease 1 0.6s forwards;
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_l}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.laptop_l}) {
     padding: 2rem;
   }
 
-  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.laptop_s}) {
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.laptop_s}) {
     padding: 1rem;
   }
-`
+`;
 
-export default PageContainer
+export default PageContainer;
