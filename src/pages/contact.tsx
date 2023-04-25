@@ -1,4 +1,5 @@
 import { GetStaticProps } from "next";
+import Image from "next/image";
 import {
   FaBloggerB,
   FaCodepen,
@@ -27,7 +28,9 @@ const Contact = ({ content }: Props) => {
       fullHeight={false}
       gap='2rem'
     >
-      <Img url='https://lh3.googleusercontent.com/fVj7DhChjs7SN1-23-u7TDarNT2hP9m7GWb6LQM_-55HjJhIU_ZyQSdYYfg7oVGJnmH0QnIQfEfedcOq__YUjAYJvrmE--CgqCp48Z6gvUwQV0uxTcjcB3YGlHFfpJKrWP8YWDu_fg=w2400' />
+      <Polygon>
+        <Image src='/photo.jpeg' width={300} height={400} alt='foto' />
+      </Polygon>
 
       {/* <FlexContainer>
         <TextLink
@@ -174,13 +177,9 @@ const ContactPanel = styled.div`
   }
 `;
 
-const Img = styled.div<{ url: string }>`
+const Polygon = styled.div`
   width: 300px;
   height: 300px;
-  /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1), 0 5px 12px rgba(0, 0, 0, 0.2); */
-  background-image: url(${(props) => props.url});
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: #fcc60a;
 
   -webkit-clip-path: polygon(

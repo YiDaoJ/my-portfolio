@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { SiAboutdotme } from "react-icons/si";
-import { GrContactInfo } from "react-icons/gr";
-import { BiCollection, BiHomeSmile } from "react-icons/bi";
 import { AppTheme } from "@/styles/theme";
 import clsx from "clsx";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import React from "react";
+import { BiCollection, BiHomeSmile } from "react-icons/bi";
+import { GrContactInfo } from "react-icons/gr";
+import { SiAboutdotme } from "react-icons/si";
+import styled from "styled-components";
 
 export const Navigation: React.FC = () => {
   const router = useRouter();
@@ -52,7 +52,6 @@ const NavigationLink = styled(Link)<{ color: string }>`
   width: 60px;
   min-width: 60px;
   padding: 60px 5px;
-  font-family: apercu mono, sans-serif;
 
   display: flex;
   flex-direction: column;
@@ -75,7 +74,6 @@ const NavigationLink = styled(Link)<{ color: string }>`
     width: 100%;
     min-height: 45px;
     padding: 15px 30px;
-    font-family: apercu mono, sans-serif;
 
     display: flex;
     flex-direction: row;

@@ -78,7 +78,6 @@ export const Main = styled.div<{
   align-items: center;
   gap: ${({ gap }) => gap};
 
-  font-family: "Montserrat", sans-serif;
   opacity: 0;
   animation: ${fadeIn} 0.3s ease 1 0.6s forwards;
 
