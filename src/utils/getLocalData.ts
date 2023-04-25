@@ -1,5 +1,5 @@
-import path from "path";
 import { promises as fs } from "fs";
+import path from "path";
 
 export async function getLocalData() {
   // get data file path
@@ -7,7 +7,7 @@ export async function getLocalData() {
   // read json file
   const fileContent = await fs.readFile(filePath);
   // parse data
-  const data = JSON.parse(fileContent);
+  const data = JSON.parse(fileContent.toString());
 
   return data;
 }

@@ -24,9 +24,11 @@ const About = ({ content }: Props) => {
         <div className='about-section'>
           <RegularH1>{content.about.title}</RegularH1>
           <StyledH2 className='h2-flex'>
-            {content.about.introductions.map((intro: string, index: number) => (
-              <div key={index}>{intro}</div>
-            ))}
+            {(content.about.introductions as string[]).map(
+              (intro: string, index: number) => (
+                <div key={index}>{intro}</div>
+              )
+            )}
           </StyledH2>
         </div>
         <div className='about-section'>
