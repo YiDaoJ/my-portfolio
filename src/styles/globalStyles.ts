@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -12,7 +12,6 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Special Elite', cursive;
     color: ${({ theme }) => theme.colors.font};
     overflow: hidden;
 
@@ -31,4 +30,4 @@ export const GlobalStyles = createGlobalStyle`
       padding: 0;
     }
   }
-`
+`;
